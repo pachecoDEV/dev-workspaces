@@ -1,0 +1,6 @@
+package br.com.excecoes.exception;
+
+public class Excecao extends Exception{
+
+	public String tratarExcecao
+}

@@ -1,0 +1,10 @@
+package br.com.excecoes.exception;
+
+public class Excecao extends Exception{
+
+	public String tratarExcecao(Exception e) {
+		if (e instanceof NullPointerException) {
+			return "Objeto Nulo";
+		} else if
+	}
+}

@@ -1,0 +1,320 @@
+JavaScript (ECMAscript)
+
+Não pule aulas
+Anote tudo
+Pratique
+Compartilhe conhecimento
+
+Bibliografia:
+JavaScript - O guia definitivo (O'Rely)
+JavaScript - Guia do Programador (Maujour)
+Guia de referência do Mozilla (developer.mozilla.org)
+Guia de referência do ECMA (ecma-international.org)
+
+Ferramentas:
+Chrome - Visual Studio Code - NodeJs
+
+HTML		CSS		JavaScript
+Conteúdo	Estilo	Interatividade
+
+Dentro do head do HTML -> Estilo (CSS)
+<style>...</style>
+
+Dentro do body do HTML -> Interatividade (JavaScript)
+<script>...</script>
+
+Comentário em JavaScript
+// -> Comentário de linha única
+/* */ -> Comentário de bloco ou várias linhas
+
+<!-- Comentário em HTML -->
+/* Comentário em CSS */
+
+Variáveis em JavaScript
+
+Criação de variáveis podem ser feitas com var, let ou const no JavaScript
+
+Exemplo de atribuição:
+var n1 = 5 (leia-se n1 recebe 5)
+var n2 = 8.5
+var n3 = 15
+
+let s1 = "Alexandre"
+let s2 = 'JavaScript'
+let s3 = 'ECMAscript'
+
+Nome da variável é chamado de identificadores.
+Pode começar com letra, $ ou _
+Não podem começar com número
+É possível usar letras ou números
+É possível utilizar acentos e símbolos (não recomendado)
+Não podem conter espaços
+Não podem ser palavras reservadas (function ou alert, por exemplo)
+Maiúsculas e minúsculas fazem diferença
+Escolha nomes coerentes para variáveis (semântica)
+
+Exemplo de utilização do NodeJS:
+
+Welcome to Node.js v12.18.0.
+Type ".help" for more information.
+> 'Oi'
+'Oi'
+> 3 + 2
+5
+> var nome = 'Alexandre'
+undefined
+> nome
+'Alexandre'
+> var nome = "Gustavo"
+undefined
+> nome
+'Gustavo'
+
+Tipos primitivos primordiais em JavaScript:
+number
+	Infinity
+	NaN (Nota a Number)
+string
+boolean
+null
+undefined
+object
+	Array
+function
+
+Podemos descobrir o tipo de cada variável usando o comando 'typeof'. Veja o exemplo:
+
+Welcome to Node.js v12.18.0.
+Type ".help" for more information.
+> var n = 200
+undefined
+> typeof n
+'number'
+> n = 'google'
+'google'
+> typeof n
+'string'
+> typeof 6
+'number'
+> typeof '6'
+'string'
+> typeof []
+'object'
+> typeof function(){}
+'function'
+> typeof null
+'object'
+>
+
+
+Manipulação de dados.
+
+Concatenação:
+(number + number) para adição
+(string + string) para concatenação
+
+Number.parseInt
+Number.parseFloat
+
+var n1 = Number.parseInt(window.prompt('Digite um número: '))
+var n2 = Number.parseInt(window.prompt('Digite outro número: '))
+var s = n1 + n2
+window.alert('A soma dos valores é: ' + s)
+
+Um novo mode de fazer a mesma conversão é usar somente Number(n). Veja:
+
+var n1 = Number(window.prompt('Digite um número: '))
+var n2 = Number(window.prompt('Digite outro número: '))
+var s = n1 + n2
+window.alert('A soma dos valores é: ' + s)
+
+Maneiras de converter string em JavaScript:
+String(n)
+n.toString()
+Exemplo:
+window.alert('A soma dos valores é: ' + s.toString)
+window.alert('A soma dos valores é: ' + String(s))
+
+
+Welcome to Node.js v12.18.0.      
+Type ".help" for more information.
+> var s = 'JavaScript'
+undefined
+> s
+'JavaScript'
+> 'Eu estou estudando s'
+'Eu estou estudando s'
+> 'Eu estou estudando ' + s
+'Eu estou estudando JavaScript'
+>
+>
+> nome = 'Alexandre'
+'Alexandre'
+> idade = 41
+41
+> nota = 5.5
+5.5
+> 'O aluno ' + nome + ' com ' + idade + ' tirou a nota ' + nota
+'O aluno Alexandre com 41 tirou a nota 5.5'
+>
+
+Utilizando template String (${}). Veja: 
+Welcome to Node.js v12.18.0.      
+Type ".help" for more information.
+> var s = 'JavaScript'
+undefined
+> s
+'JavaScript'
+> 'Eu estou estudando s'
+'Eu estou estudando s'
+> 'Eu estou estudando ' + s
+'Eu estou estudando JavaScript'
+>
+>
+> nome = 'Alexandre'
+'Alexandre'
+> idade = 41
+41
+> nota = 5.5
+5.5
+> 'O aluno ' + nome + ' com ' + idade + ' tirou a nota ' + nota
+'O aluno Alexandre com 41 tirou a nota 5.5'
+> `O aluno ${nome} com ${idade} anos tirou a nota ${nota}`
+'O aluno Alexandre com 41 anos tirou a nota 5.5'
+>
+
+s.length // Quantidade de caracteres a string tem
+s.toUpperCase() // Tudo para 'MAIÚSCULAS'
+s.toLowerCase() // Tudo para 'minúsculas'
+
+Formatação de números
+
+> var n1 = 1545.5
+undefined
+> n1
+1545.5
+> n1.toFixed(2)
+'1545.50'
+> n1.toFixed(2).replace('.', ',')
+'1545,50'
+> n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+'R$ 1,545.50'
+> n1.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})
+'US$ 1,545.50'
+> n1.toLocaleString('pt-BR', {style: 'currency', currency: 'EUR'})
+'€ 1,545.50'
+>
+
+
+`${Operadores do JS}`
+Aritméticos
+	+ -> Atribuição
+	- -> Subtração
+	* -> Multiplicação
+	/ -> Divisão
+	% -> Resto da divisão
+	** -> Exponenciação
+Atribuição
+Relacionais
+Lógicos
+Ternário
+
+Ordem de precedência de operadores
+> 5 + 2
+7
+> 9 % 2
+1
+> 9 / 2
+4.5
+> 5 + 3 / 2
+6.5
+> (5 + 3) / 2
+4
+
+Relacionais
+> -> Maior que
+< -> Menor que
+>= -> Maior igual a
+<= -> Menor igual a
+== -> Igual
+!= -> Diferente
+
+
+Lógicos
+! -> Negação
+&& -> Conjunção (E)
+|| -> Disjunção (OU)
+
+> var a = 5
+undefined
+> var b = 8
+undefined
+> true && false
+false
+> true && true
+true
+> false || false
+false
+> true || false
+true
+> a > b && b % 2 == 0
+false
+> a > b || b % 2 == 0
+true
+>
+
+Precedência
+() ** / * + -
+> < >= <= == !
+!
+&&
+||
+
+Operador ternário
+teste ? true : false
+
+media > 7 ? 'APROVADO' : 'REPROVADO'
+
+var res = x % 2 == 0 ? 5 : 9
+
+var r = idade >= 18 ? 'MAIOR' : 'MENOR'
+
+Entendendo DOM
+DOM - Document Object Model
+
+Árvore DOM
+Elementos:
+
+window
+	location
+	document
+		HTML
+			head
+				meta
+				title
+			body
+				h1
+				p
+				p
+					strong
+				div
+	history
+
+
+Selecionar elementos por:
+Marca (TagName())
+ID
+Nome
+Classe
+Seletor
+
+Eventos DOM
+
+
+Condições em JavaScript
+
+Condição simples: Não tem a condição FALSE
+Condição composta: Contém a condição de FALSE (else)
+Condições aninhadas: Contém outras condições dentro dela.
+
+

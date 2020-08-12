@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link para a fonte utilizada no site -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&display=swap" rel="stylesheet">
+    
+    <!-- Link para o ícone do título da página -->
+    <link rel="icon" href="./img/icon_title.png">
+
+    <!-- Link para a página de Estilo do site -->
+    <link rel="stylesheet" href="./style/style.css">
+
+    <title>Competition - Clube de Tiro</title>
+</head>
+<body>
+    
+    <header>
+        
+        <a href="https://www.facebook.com/ClubedeTiroCompetition/?ref=bookmarks" target="_blank"><img src="./img/icon_facebook.svg" alt="Facebook"></a>
+        <a href="https://www.instagram.com/competition_clubedetiro/?hl=pt-br" target="_blank"><img src="./img//icon_instagram.svg" alt="Instagram"></a>
+        <a href="https://www.youtube.com/channel/UCIfAkPrG5YIT699pjPDpVjA/videos?view_as=subscriber" target="_blank"><img src="./img/icon_youtube.svg" alt="YouTube"></a>
+
+            <nav id="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="quem_somos.html">Quem somos</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="agenda.html">Agenda</a></li>
+                    <li><a href="resultados.html">Resultados</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            
+            <p id="logo_competition"><img src="./img//logo_competition.png" alt="Logo Competition"></p>
+
+    </header>
+
+    <section>
+
+        <div id="tankContato">
+            <figure id="tankContatoDireita">
+                <img id="tankContatoDir" src="./img/tank01.png" alt="Soldado">
+            </figure>
+        </div>
+
+        <div id="contatoEndereco">
+            <h1>Nossos telefones</h1>
+            <p>(11) 2338-0482</p>
+            <p>(11) 98160-0019</p>
+            <br>
+            <h1>E-Mail</h1>
+            <p>
+                clubedetirocompetition@gmail.com
+                <h5><a href="mailto:clubedetirocompetition@gmail.com?subject=Assunto&body=Digite sua mensagem.">Clique aqui </a>Para enviar um email.</h5>
+            </p>
+
+            <br>
+            <h1>Endereço</h1>
+            <p>Rua Dr, Olavo Egidio, 629-A | Santana | São Paulo, SP | CEP 02037-001</p>
+            <br>
+            <h1>Horários de funcionamento</h1>
+            <p>Segunda a Sexta: 09:00 - 20:00h</p> 
+            <p>Sábados: 09:00 - 17:00h</p>
+        </div>
+
+        <div id="contato">
+            
+            <form action="mailto:clubedetirocompetition@gmail.com" method="POST">
+                <h1 id="contato_title">Contato</h1>
+                <p><label for="nome">Nome: </label>
+                <input type="text" name="nome" id="nome" required></p>
+                
+                <p><label for="email">E-Mail: </label>
+                <input type="text" name="email" id="email" required></p>
+
+                <p><label for="telefone">Telefone: </label>
+                <input type="tel" name="telefone" id="telefone" required></p>
+
+                <p><label for="assunto">Assunto: </label>
+                <input type="text" name="assunto" id="assunto" required></p>
+
+                <p><label for="mensagem">Mensagem: </label>
+                <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea></p>
+                
+                <div id="enviar">
+                    <input type="submit" value="Enviar">
+                </div>
+                <div id="limpar">
+                    <input type="reset" value="Limpar">
+                </div>
+
+            </form>
+        </div>
+
+    </section>
+
+    <footer>
+        <h6>&copy; Competition - Clube de Tiro - 2020</h6>
+    </footer>
+    <!-- Link para o arquivo de scripts -->
+    <script src="./script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+body {
+    font-family: 'Arial', 'Verdana', sans-serif;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 15px;
+    width: 1000px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.445);
+}
+
+#logo_competition {
+    display: flex;
+    align-items: left;
+    margin-top: -15px;
+}
+
+#menu {
+    font-family: 'Orbitron', sans-serif;
+    margin-top: -60px;
+    margin-left: 50px;
+    list-style: none;
+    text-align: center;
+}
+
+#menu_cursos {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    display: flex;
+}
+
+#menu ul li {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    background-color: rgba(161, 161, 161, 0.5);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#menu_cursos ul li {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    background-color: rgba(161, 161, 161, 0.5);
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+
+#container {
+    text-align: center;
+}
+
+form {
+    margin: auto;
+    margin-top: 50px;
+    width: 450px;
+    padding: 1em;
+    border: solid 3px rgb(161, 161, 161);
+    border-radius: 1em;
+}
+
+#contato_title {
+    text-align: center;
+}
+
+label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+
+input, textarea {
+    font: 1em sans-serif;
+    width: 300px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: solid 1px #cccccc;
+}
+
+input:focus, textarea:focus {
+    border-color: #000000;
+}
+
+textarea {
+    vertical-align: top;
+    height: 5em;
+    resize: vertical;
+}
+
+#enviar {
+    padding-left: 96px;
+    margin-left: .5em;
+}
+
+#limpar {
+    padding-left: 96px;
+    margin-left: .5em;
+    margin-top: 10px;
+}
+
+footer {
+    padding: 20px;
+    font: normal 15pt Arial;
+    text-align: center;
+}
+
+#contatoEndereco {
+    text-align: center;
+}
+
+#curso {
+    text-align: center;
+}
+
+#cursoIniciante ul {
+    list-style-type: none;
+}
+
+#cursoIniciante, #cursoNivelI, #cursoNivelII, #cursoNivelIII, #cursoTiro, #cursoIPSC {
+    text-align: left;
+}
+
+#ipsc_idsc {
+    width: 100%;
+    height: 100%;
+}
+
+#armas_ipsc {
+    width: 100%;
+    height: 100%;
+}
+
+#resultados {
+    text-align: center;
+}
+
+#table {
+    text-align: center;
+}
+
+#table th {
+    font-size: 20pt;
+}
+
+#table td {
+    border: solid 1px black;
+    padding: 10px 50px 10px 50px;
+    font-size: 10pt;
+}
+
+#resultadosPrimeiraEtapa {
+    text-align: center;
+}
+
+#tituloColunas {
+    background-color: #cccccc;
+}
+
+#tableResParcial {
+    text-align: center;
+    font-size: 14pt;    
+}
+
+#tableResParcial td {
+    border: solid 1px black;
+    padding: 3px;
+}
+
+#soldadoDireita #soldado01 {
+    max-width: 400px;
+    float: right;
+    margin-right: -220px;
+    margin-top: -150px;
+}
+
+#soldadoEsquerda #soldado02 {
+    max-width: 300px;
+    float: left;
+    margin-left: -250px;
+    margin-top: -100px;
+}
+
+#soldadoQuemSomosDireita #soldadoQuemSomosDir {
+    max-width: 400px;
+    float: right;
+    margin-right: -300px;
+    margin-top: -140px;
+}
+
+#soldadoCursosDireita #soldadoCursosDir {
+    max-width: 300px;
+    float: right;
+    margin-right: -200px;
+    margin-top: -150px;
+}
+
+#soldadoServicosDireita #soldadoServicosDir {
+    max-width: 400px;
+    float: right;
+    margin-right: -280px;
+    margin-top: -120px;
+}
+
+#soldadoAgendaDireita #soldadoAgendaDir {
+    max-width: 300px;
+    float: right;
+    margin-right: -250px;
+    margin-top: -120px;
+}
+
+#soldadoResultadoDireita #soldadoResultadoDir {
+    max-width: 280px;
+    float: right;
+    margin-right: -200px;
+    margin-top: -120px;
+}
+
+#tankContatoDireita #tankContatoDir {
+    max-width: 600px;
+    float: right;
+    margin-right: -290px;
+    margin-top: -120px;
+}

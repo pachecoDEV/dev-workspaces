@@ -1,0 +1,26 @@
+package br.com.excecoes.teste;
+
+import javax.swing.JOptionPane;
+
+public class TesteExcecao {
+	public static void main(String[] args) {
+		
+		try {
+			int numero = Integer.parseInt(JOptionPane.showInputDialog("Digite um número: "));
+			System.out.println(numero);
+			
+			String palavra = null;
+			JOptionPane.showMessageDialog(null, palavra.length());
+			
+		} catch (NumberFormatException e01) {
+			JOptionPane.showMessageDialog(null, "Número inválido! ");
+			e01.printStackTrace();
+			
+		} catch (NullPointerException e02) {
+			JOptionPane.showMessageDialog(null, "Objeto nulo! ");
+			e02.printStackTrace();
+			
+		}
+		
+	}
+}

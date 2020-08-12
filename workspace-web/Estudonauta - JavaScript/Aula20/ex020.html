@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Link para o arquivo de Style-->
+    <link rel="stylesheet" href="ex020.css">
+
+    <title>Analisador de números</title>
+</head>
+<body>
+    <header>
+        <h1>Analisador de Números</h1>
+    </header>
+    <section>
+        <div id="div1">
+            <p>Número (entre 1 e 100): <input type="number" name="numero" id="numero">
+            <input type="button" value="Adicionar" onclick="adicionar()"></p>
+            <select name="lista" id="lista" size="10"></select><br>
+            <input type="button" value="Finalizar" onclick="finalizar()">
+        </div>
+        <div id="div2">
+            <h1>Aguardando para calcular!</h1>
+        </div>
+    </section>
+    <footer>
+        &copy; PachecoDEV    
+    </footer>
+
+    <!--Link para o arquivo de Script-->
+    <script src="ex020.js"></script>
+</body>
+</html>

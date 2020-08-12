@@ -1,0 +1,17 @@
+package br.com.excecoes.exception;
+
+public class Excecao extends Exception{
+
+	public String tratarExcecao(Exception e) {
+		if (e instanceof NullPointerException) {
+			return "Objeto Nulo";
+		} else if (e instanceof NumberFormatException) {
+			return "Número inválido";
+		} else {
+			return "Exceção desconhecida !!";
+		}
+	}
+	
+	Exception ex = new NullPointerException();
+	
+}
