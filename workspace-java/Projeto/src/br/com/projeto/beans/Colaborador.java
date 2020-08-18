@@ -1,18 +1,18 @@
 package br.com.projeto.beans;
 
-public class Colaborador {
+public class Colaborador extends Pessoa {
 	private String nome;
 	private int id;
 	private Cargo cargo;
 	private String admissao;
 	private String cpf;
-	
+		
 	public Colaborador() {
 		super();
 	}
-	
-	public Colaborador(String nome, int id, Cargo cargo, String admissao, String cpf) {
-		super();
+
+	public Colaborador(String fone, String email, String nome, int id, Cargo cargo, String admissao, String cpf) {
+		super(fone, email);
 		this.nome = nome;
 		this.id = id;
 		this.cargo = cargo;
