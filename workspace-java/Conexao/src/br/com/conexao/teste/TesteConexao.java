@@ -4,9 +4,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Connection;
-
 import javax.swing.JOptionPane;
-
 import br.com.conexao.exception.Excecao;
 
 public class TesteConexao {
@@ -19,12 +17,12 @@ public class TesteConexao {
 		
 		try {
 			fiap = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL", "rm85657", "160185");
-			JOptionPane.showMessageDialog(null, "Abriu Conex√£o!!!");
+			JOptionPane.showMessageDialog(null, "Abriu Conex„o!!!");
 			estrutura = fiap.createStatement();
-			resultado = estrutura.executeQuery("select * from TB_CLIENTE");
 			
-			resultado.next();
-			JOptionPane.showMessageDialog(null, resultado.getInt("ID") + " " + resultado.getString("NOME") + " " + resultado.getInt("ESTRELAS"));
+			String nome = JOptionPane.showInputDialog("Digite um nome").toUpperCase();
+			
+			resultado = estrutura.executeQuery("select * from TB_CLIENTE");
 			
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, Excecao.tratarExcecao(e));

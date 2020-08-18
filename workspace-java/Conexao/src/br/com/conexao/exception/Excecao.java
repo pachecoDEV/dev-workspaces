@@ -8,11 +8,11 @@ public class Excecao extends Exception{
 		if (e instanceof NullPointerException) {
 			return "Objeto Nulo";
 		} else if (e instanceof NumberFormatException) {
-			return "NÃºmero InvÃ¡lido";
+			return "Número Inválido";
 		} else if (e instanceof SQLException){
 			return "Erro no banco de dados";
 		} else {
-			return "ExceÃ§Ã£o desconhecida !!";
+			return "Exceção desconhecida !!";
 		}
 	}	
 }
