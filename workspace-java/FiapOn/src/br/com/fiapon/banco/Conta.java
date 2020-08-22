@@ -13,20 +13,20 @@ public class Conta {
 	/**
 	 * Número da Conta
 	 */
-	public int numero;
+	private int numero;
 	/**
 	 * Número da Agência
 	 */
-	public int agencia;
+	private int agencia;
 	/**
 	 * Saldo da Conta
 	 */
-	public double saldo; 
+	private double saldo;
 
 	/**
 	 * Construtores da Classe Conta
 	 */
-	public Conta() {
+	public Conta() { // Construtor vazio
 		
 	}
 	
@@ -51,14 +51,24 @@ public class Conta {
 	public void retirar (double valor) {
 		this.saldo -= valor;
 	}
+	public int getNumero() {
+		return numero;
+	}
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	public int getAgencia() {
+		return agencia;
+	}
+	public void setAgencia(int agencia) {
+		this.agencia = agencia;
+	}
 	
 	/**
 	 * Verifica o saldo da conta
 	 * @return valor do saldo da conta
 	 */
-	public double verificarSaldo () {
+	public double getSaldo() {
 		return saldo;
 	}
-	
-	
 }
