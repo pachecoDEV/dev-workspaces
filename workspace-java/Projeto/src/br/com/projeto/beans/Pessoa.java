@@ -4,6 +4,15 @@ public class Pessoa {
 	private String fone;
 	private String email;
 	
+	public void setAll(String fone, String email) {
+        this.fone = fone;
+        this.email = email;
+    }
+   
+    public String getAll() {
+        return fone + "\n" + email;
+    }
+	
 	public Pessoa() {
 		super();
 	}

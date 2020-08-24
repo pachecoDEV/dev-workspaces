@@ -6,6 +6,20 @@ public class Colaborador extends Pessoa {
 	private Cargo cargo;
 	private String admissao;
 	private String cpf;
+	
+	public void setAll(String fone, String email, String nome, int id, Cargo cargo, String admissao, String cpf) {
+        super.setAll(fone, email);
+        this.nome = nome;
+        this.id = id;
+        this.cargo = cargo;
+        this.admissao = admissao;
+        this.cpf = cpf;
+    }
+   
+    public String getAll() {
+        return super.getAll() + "\n" + nome + "\n" + cargo + "\n" + admissao + "\n" + cpf;
+       
+    }
 		
 	public Colaborador() {
 		super();
