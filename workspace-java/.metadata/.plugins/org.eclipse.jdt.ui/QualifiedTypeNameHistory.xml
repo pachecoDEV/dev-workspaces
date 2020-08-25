@@ -6,12 +6,18 @@
     <fullyQualifiedTypeName name="br.com.conexao.exception.Excecao"/>
     <fullyQualifiedTypeName name="com.sun.jdi.connect.spi.Connection"/>
     <fullyQualifiedTypeName name="java.beans.Statement"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="br.com.projeto.exception.Excecao"/>
-    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="br.com.fiapon.banco.Conta"/>
+    <fullyQualifiedTypeName name="br.com.projeto.beans.Colaborador"/>
+    <fullyQualifiedTypeName name="br.com.projeto.beans.Pessoa"/>
+    <fullyQualifiedTypeName name="br.com.projeto.dao.CargoDAO"/>
+    <fullyQualifiedTypeName name="br.com.projeto.beans.Cargo"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>
