@@ -1,15 +1,8 @@
 opcao = 0
 
 while opcao != 7:
-    print("**** MENU ****")
-    print("1 - Cadastrar Produto")
-    print("2 - Alterar Produto")
-    print("3 - Excluir Produto")
-    print("4 - Listar Estoque de Peças")
-    print("5 - Comprar Produto")
-    print("6 - Vender Produto")
-    print("7 - Sair")
-    opcao = int(input("Qual a opção desejada?"))
+    print('\nMenu')
+    opcao = int(input("\t1. Cadastrar Produto\n\t2. Alterar Produto\n\t3. Excluir Produto\n\t4. Listar Estoque de Peça\n\t5. Comprar Produto\n\t6. Vender Produto\n\t7. Sair\n\tDigite a opção desejada: "))
     if opcao == 1:
         print("Opção 1 selecionada!")
     elif opcao == 2:
@@ -20,14 +13,20 @@ while opcao != 7:
         else:
             print("SENHA INCORRETA")
     elif opcao == 3:
-        print("Opção 3 selecionada!")
+        senha = input("Digite sua senha: ")
+        if senha == "yN1825*a":
+            print("Acesso permitido.")
+            print("Código do produto:")
+        else:
+            print("SENHA INCORRETA")
     elif opcao == 4:
-        print("Opção 4 selecionada!")
+        print("Produtos Cadastrados:")
     elif opcao == 5:
         print("Opção 5 selecionada!")
     elif opcao == 6:
         print("Opção 6 selecionada!")
-    elif opcao == 7 :
+    elif opcao == 7:
         print("Saindo...")
+        break
     else:
         print("Opção inválida!")
