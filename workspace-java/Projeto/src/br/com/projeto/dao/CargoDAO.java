@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import br.com.projeto.beans.Cargo;
 import br.com.projeto.conexao.Conexao;
 /*
- * DAO => classe responsável por manipular os dados no Banco de Dados
+ * DAO => classe responsÃ¡vel por manipular os dados no Banco de Dados
  * Nela deve ter o CRUD (Create - Read - Update - Delete)
  * 
  */
@@ -38,9 +38,38 @@ public class CargoDAO {
 	
 	public int delete(int id) throws Exception {
 		stmt = con.prepareStatement
-				("DELETE FROM TB_CARGO WHERE NR_ID = ?");
+			("DELETE FROM TB_CARGO WHERE NR_ID = ?");
 		stmt.setInt(1, id);
 		return stmt.executeUpdate();
+	}
+
+	public int modifySalary(String nome) throws Exception {
+		stmt = con.prepareStatement
+			("UPDATE TB_CARGO SET VL_SALARIO = VL_SALARIO * 1.1 WHERE NM_CARGO = ?");
+		stmt.setString(1, nome);
+		/*
+		3 executes()
+		- execute() => retorna um boolean
+		- executeUpdate() => retornar a qtde de linhas afetadas no bd
+		- executeQuery() => deve ser usado somente com select, pq retorna um ResultSet
+		*/
+		return stmt.executeUpdate();
+	}
+
+	public Cargo getCargo(int id) throws Exception {
+		stmt = con.prepareStatement
+			("SELECT * FROM TB_CARGO WHERE NR_ID = ?");
+		stmt.setInt(1, id);
+		rs = stmt.executeQuery();
+		if (rs.next()) {
+			return new Cargo(
+				rs.getString("NM_CARGO"),
+				rs.getString("NM_NIVEL"),
+				rs.getDouble("VL_SALARIO"),
+				rs.getInt("NR_ID")
+			);
+		}
+		return new Cargo();
 	}
 
 }
