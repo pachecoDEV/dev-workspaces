@@ -11,6 +11,7 @@ codproduto = []
 descproduto = []
 qtdeproduto = []
 estoque = []
+passcode = "yN1825*a"
 
 while opcao != 7:
     print('\nMenu')
@@ -31,11 +32,11 @@ while opcao != 7:
     elif opcao == 2:
         cont = 3
         senha = input("Digite sua senha: ")
-        while senha != "yN1825*a" and cont > 1:
+        while senha != passcode and cont > 1:
             print("Senha incorreta, você têm mais ", cont - 1, " tentativas.")
             senha = input("Digite novamente.\nSenha: ")
             cont = cont - 1
-        if senha == "yN1825*a":
+        if senha == passcode:
             print("Acesso permitido.")
             
             AlterarProduto.alterarproduto()
@@ -46,11 +47,11 @@ while opcao != 7:
     elif opcao == 3:
         cont = 3
         senha = input("Digite sua senha: ")
-        while senha != "yN1825*a" and cont > 1:
+        while senha != passcode and cont > 1:
             print("Senha incorreta, você têm mais ", cont - 1, " tentativas.")
             senha = input("Digite novamente.\nSenha: ")
             cont = cont - 1
-        if senha == "yN1825*a":
+        if senha == passcode:
             print("Acesso permitido.")
 
             ExcluirProduto.excluir_produto()
