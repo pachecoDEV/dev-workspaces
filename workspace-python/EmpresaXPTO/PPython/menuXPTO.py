@@ -1,3 +1,10 @@
+import CadastrarProdutos
+import AlterarProduto
+import ExcluirProduto
+import ListarProdutos
+import ComprarProduto
+import VenderProduto
+
 opcao = 0
 
 codproduto = []
@@ -18,18 +25,8 @@ while opcao != 7:
         "Digite a opção desejada: "))
 
     if opcao == 1:
-        def cadastrarprodutos():
-            codproduto = int(input("Código: "))
-            if codproduto in estoque:
-                print("Código já cadastrado")
-            else:
-                descproduto = input("Descrição do produto: ").upper()
-                qtdeproduto = int(input("Quantidade: "))
-                estoque.append(codproduto)
-                estoque.append(descproduto)
-                estoque.append(qtdeproduto)
-
-        cadastrarprodutos()
+        
+        CadastrarProdutos.cadastrarprodutos()
 
     elif opcao == 2:
         cont = 3
@@ -40,21 +37,8 @@ while opcao != 7:
             cont = cont - 1
         if senha == "yN1825*a":
             print("Acesso permitido.")
-
-            def alterarproduto():
-                codproduto = input("Código: ")
-                index = codproduto.index(codproduto)
-                if codproduto in estoque:
-                    print("Descrição: ", descproduto[index],
-                          "Quantidade: ", qtdeproduto[index])
-                    descproduto[index] = input("Nova descrição: ").upper()
-                    qtdeproduto[index] = int(input("Nova quantidade: "))
-                    print("Descrição alterada para: ", descproduto[index],
-                          "Quantidade alterada para: ", qtdeproduto[index])
-                else:
-                    print("Produto não cadastrado.")
-
-            alterarproduto()
+            
+            AlterarProduto.alterarproduto()
 
         else:
             print("SENHA BLOQUEADA!")
@@ -69,41 +53,22 @@ while opcao != 7:
         if senha == "yN1825*a":
             print("Acesso permitido.")
 
-            def removerproduto():
-                codproduto = int(input("Código: "))
-                if codproduto in estoque:
-                    print("Descrição: ", descproduto, "Quantidade: ", qtdeproduto)
-                    opcao = input("Deseja excluir o produto? [S] ou [N]").upper()
-                    if opcao == "s".upper():
-                        codproduto.pop(codproduto.index(codproduto))
-                        descproduto.pop(codproduto.index(codproduto))
-                        qtdeproduto.pop(codproduto.index(codproduto))
-                        print("PRODUTO EXCLUIDO COM SUCESSO")
-                    elif opcao == "n".upper():
-                        print("PRODUTO NÃO EXCLUÍDO")
-                    else:
-                        print("OPÇÃO INVÁLIDA")
-                else:
-                    print("PRODUTO NÃO CADASTRADO")
-
-            removerproduto()
+            ExcluirProduto.excluir_produto()
 
         else:
-            print("Senha Bloqueada!")
-            
-    elif opcao == 4:
-        def listarprodutos():
-            print("CÓDIGO\tDESCRIÇÃO\tQUANTIDADE EM ESTOQUE:")
-            print(6 * '-', '', 9 * '-', ' ', 22 * '-')
-            print(estoque)
+            print("SENHA BLOQUEADA!")
 
-        listarprodutos()
+    elif opcao == 4:
+        
+        ListarProdutos.listarprodutos()
 
     elif opcao == 5:
-        print("Comprar produto")
+        
+        ComprarProduto.comprar_produto()
 
     elif opcao == 6:
-        print("Vender produto")
+        
+        VenderProduto.vender_produto()
 
     elif opcao == 7:
         print("Saindo...")
