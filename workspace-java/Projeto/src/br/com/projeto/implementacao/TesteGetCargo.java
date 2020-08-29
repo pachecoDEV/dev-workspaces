@@ -1,10 +1,12 @@
 package br.com.projeto.implementacao;
 
+import javax.crypto.MacSpi;
 import javax.swing.JOptionPane;
 
 import br.com.projeto.beans.Cargo;
 import br.com.projeto.dao.CargoDAO;
 import br.com.projeto.exception.Excecao;
+import br.com.projeto.util.Magic;
 
 public class TesteGetCargo {
     public static void main(String[] args) {
@@ -12,7 +14,7 @@ public class TesteGetCargo {
             CargoDAO dao = new CargoDAO();
 
             Cargo resposta = 
-                dao.getCargo(Integer.parseInt(JOptionPane.showInputDialog("ID")));
+                dao.getCargo(Magic.i("ID"));
             System.out.println(resposta.getId());
             System.out.println(resposta.getNome());
             System.out.println(resposta.getNivel());

@@ -1,8 +1,8 @@
 import menuXPTO
 
 def cadastrarprodutos():
-    codproduto = int(input("Código: "))
-    if codproduto in menuXPTO.estoque:
+    codproduto = input("Código: ")
+    if codproduto in menuXPTO.codproduto:
         print("Código já cadastrado")
     else:
         descproduto = input("Descrição do produto: ").upper()

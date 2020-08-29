@@ -1,8 +1,8 @@
 import menuXPTO
 
 def comprar_produto():
-    codigo = int(input("Código do produto: "))
-    for menuXPTO.alterar in menuXPTO.estoque:
+    codigo = input("Código do produto: ")
+    for menuXPTO.alterar in menuXPTO.codproduto:
         if menuXPTO.estoque[0] == codigo:
             print("\nCódigo:", f"{menuXPTO.estoque[0]}", "Descrição:", f"{menuXPTO.estoque[1]}", "Quantidade:", f"{menuXPTO.estoque[2]}\n")
             quant_prod = int(input("Quanto deseja comprar: "))  # ==> Comprando somente o primeiro item da lista

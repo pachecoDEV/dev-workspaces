@@ -1,8 +1,8 @@
 import menuXPTO
 
 def excluir_produto():
-    codigo = int(input("Código: "))
-    if codigo in menuXPTO.estoque:
+    codigo = input("Código: ")
+    if codigo in menuXPTO.codproduto:
         print("Descrição: ", menuXPTO.estoque[1], "Quantidade: ", menuXPTO.estoque[2])
         opcao = input("Deseja excluir o produto? [S/N] ").upper()
         if opcao == "s".upper():	

@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class Magic {
     
     public static String s(String msg) {
-        return JOptionPane.showInputDialog(msg).toUpperCase()
+        return JOptionPane.showInputDialog(msg).toUpperCase();
     }
 
     public static int i(String msg) {

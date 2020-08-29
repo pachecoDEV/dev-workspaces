@@ -4,7 +4,7 @@ def alterarproduto():
     codproduto = input("Código: ")
     index = codproduto.index(codproduto)
     print(menuXPTO.estoque)
-    if codproduto in menuXPTO.estoque:
+    if codproduto in menuXPTO.codproduto:
         print("Descrição: ", menuXPTO.descproduto[index],
                 "Quantidade: ", menuXPTO.qtdeproduto[index])
         menuXPTO.descproduto[index] = input("Nova descrição: ").upper()
