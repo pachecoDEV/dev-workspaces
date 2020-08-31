@@ -11,7 +11,7 @@ public class TesteAddCargo {
 	public static void main(String[] args) {
 		
 		try {
-			CargoDAO dao = new CargoDAO();
+			CargoDAO dao = new CargoDAO(); 
 			Cargo cargo = new Cargo();
 			cargo.setId(Integer.parseInt(JOptionPane.showInputDialog("ID")));
 			cargo.setNivel(JOptionPane.showInputDialog("Nível").toUpperCase());
