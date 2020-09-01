@@ -50,11 +50,10 @@ public class CRUDVagas {
 		return stmt.executeUpdate();
 	}
 	
-	public int modificaProvPrat(String modProvPrat) throws Exception {
+	public int update(String modProvPrat) throws Exception {
 		stmt = con.prepareStatement
-				("UPDATE TB_VAGAS SET PROVA_PRAT = ? WHERE ID_VAGA = ?");
+				("UPDATE TB_VAGAS SET PROVA_PRAT = 'O LOCO BICHO' WHERE ID_VAGA = ?");
 		stmt.setString(1, modProvPrat);
-		stmt.setString(2, modProvPrat);
 		return stmt.executeUpdate();
 	}
 

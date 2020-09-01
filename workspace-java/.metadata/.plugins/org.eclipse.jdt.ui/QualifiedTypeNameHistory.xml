@@ -8,7 +8,6 @@
     <fullyQualifiedTypeName name="java.beans.Statement"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
-    <fullyQualifiedTypeName name="br.com.projeto.exception.Excecao"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="br.com.fiapon.banco.Conta"/>
@@ -16,16 +15,18 @@
     <fullyQualifiedTypeName name="br.com.projeto.beans.Pessoa"/>
     <fullyQualifiedTypeName name="br.com.projeto.dao.CargoDAO"/>
     <fullyQualifiedTypeName name="br.com.projeto.beans.Cargo"/>
-    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="br.com.projeto.conexao.Conexao"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="br.com.projeto.nambiquara.templateUsuario"/>
-    <fullyQualifiedTypeName name="br.com.projeto.crud.CRUDUsuario"/>
-    <fullyQualifiedTypeName name="br.com.projeto.crud.CRUDProcesso"/>
-    <fullyQualifiedTypeName name="br.com.projeto.crud.CRUDVagas"/>
     <fullyQualifiedTypeName name="br.com.projeto.nambiquara.dadosVaga"/>
     <fullyQualifiedTypeName name="br.com.projeto.nambiquara.statusProcesso"/>
+    <fullyQualifiedTypeName name="br.com.projeto.exception.Excecao"/>
+    <fullyQualifiedTypeName name="br.com.projeto.crud.CRUDProcesso"/>
+    <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+    <fullyQualifiedTypeName name="br.com.projeto.crud.CRUDVagas"/>
+    <fullyQualifiedTypeName name="br.com.projeto.implementacao.TesteUpdateVaga"/>
+    <fullyQualifiedTypeName name="br.com.projeto.crud.CRUDUsuario"/>
 </qualifiedTypeNameHistroy>

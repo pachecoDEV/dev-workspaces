@@ -52,7 +52,7 @@ public class CRUDUsuario {
 		return stmt.executeUpdate();
 	}
 	
-	public int modificaPretSal(String modPretSal) throws Exception {
+	public int update(String modPretSal) throws Exception {
 		stmt = con.prepareStatement
 				("UPDATE TB_USUARIO SET PRET_SAL = PRET_SAL * 1.1 WHERE CPF = ?");
 		stmt.setString(1, modPretSal);
