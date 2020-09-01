@@ -1,0 +1,26 @@
+package br.com.projeto.nambiquara;
+
+import java.io.Serializable;
+
+public class statusProcesso extends nambiquaraRh implements Serializable{
+    private String statusDocumentacao;
+    private String statusProvaPratica;
+    private String statusContratacao;
+    private String id;
+    
+	public statusProcesso() {
+		super();
+	}
+
+	public statusProcesso(String statusDocumentacao, String statusProvaPratica, String statusContratacao, String id) {
+		super();
+		this.statusDocumentacao = statusDocumentacao;
+		this.statusProvaPratica = statusProvaPratica;
+		this.statusContratacao = statusContratacao;
+		this.id = id;
+	}
+    
+	
+    
+ 
+}

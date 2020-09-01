@@ -21,12 +21,11 @@ public class CRUDProcesso {
 	
 	public int add(statusProcesso objeto) throws Exception {
 		stmt = con.prepareStatement
-				("INSERT INTO TB_PROCESSO"
-						+ "(ST_DOC, ST_PROVPRAT, ST_CONTRATA, ID");
+				("INSERT INTO TB_PROCESSO (ST_DOC, ST_PROVPRAT, ST_CONTRATA, ID) VALUES (?, ?, ? ,?)");
 		stmt.setString(1, objeto.getStatusDocumentacao());
 		stmt.setString(2, objeto.getStatusProvaPratica());
 		stmt.setString(3, objeto.getStatusContratacao());
-		stmt.setInt(4, objeto.getId());
+		stmt.setString(4, objeto.getId());
 		
 		return stmt.executeUpdate();
 	}

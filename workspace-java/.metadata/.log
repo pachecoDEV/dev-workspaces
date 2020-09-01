@@ -3171,3 +3171,1251 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-08-31 22:58:13.764
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package br.com.projeto.crud;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import br.com.projeto.conexao.Conexao;
+import br.com.projeto.nambiquara.statusProcesso;
+
+public class CRUDProcesso {
+	
+	private Connection con;
+	private PreparedStatement stmt;
+	
+	public CRUDProcesso() throws Exception {
+		con = Conexao.conectar();
+	}
+	
+	public void fechar() throws Exception {
+		con.close();
+	}
+	
+	public int add(statusProcesso objeto) throws Exception {
+		stmt = con.prepareStatement
+				("INSERT INTO TB_PROCESSO ST_DOC, ST_PROVPRAT, ST_CONTRATA, ID");
+						+ ""
+						+ ""
+						+ "");
+		stmt.setString(1, objeto.getStatusDocumentacao());
+		stmt.setString(2, objeto.getStatusProvaPratica());
+		stmt.setString(3, objeto.getStatusContratacao());
+		stmt.setString(4, objeto.getId());
+		
+		return stmt.executeUpdate();
+	}
+	
+	public int delete(int id) throws Exception {
+		stmt = con.prepareStatement
+				("DELETE FROM TB_PROCESSO WHERE ID = ?");
+		stmt.setInt(1, id);
+		return stmt.executeUpdate();
+	}
+	
+	public int modificaProvPrat(String modProvPrat) throws Exception {
+		stmt = con.prepareStatement
+				("UPDATE TB_PROCESSO SET ST_PROVPRAT = ? WHERE ID = ?");
+		stmt.setString(1, modProvPrat);
+		stmt.setString(2, modProvPrat);
+		return stmt.executeUpdate();
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:450)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:200)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:268)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:596)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1138)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1315)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2020-08-31 22:58:13.772
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:450)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:200)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:268)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:596)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1138)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1315)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2020-08-31 22:58:13.775
+!MESSAGE Error in JDT Core during reconcile
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:450)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:200)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:268)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:596)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1138)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1315)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-08-31 22:58:13.786
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package br.com.projeto.crud;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import br.com.projeto.conexao.Conexao;
+import br.com.projeto.nambiquara.statusProcesso;
+
+public class CRUDProcesso {
+	
+	private Connection con;
+	private PreparedStatement stmt;
+	
+	public CRUDProcesso() throws Exception {
+		con = Conexao.conectar();
+	}
+	
+	public void fechar() throws Exception {
+		con.close();
+	}
+	
+	public int add(statusProcesso objeto) throws Exception {
+		stmt = con.prepareStatement
+				("INSERT INTO TB_PROCESSO ST_DOC, ST_PROVPRAT, ST_CONTRATA, ID");
+						+ ""
+						+ ""
+						+ "");
+		stmt.setString(1, objeto.getStatusDocumentacao());
+		stmt.setString(2, objeto.getStatusProvaPratica());
+		stmt.setString(3, objeto.getStatusContratacao());
+		stmt.setString(4, objeto.getId());
+		
+		return stmt.executeUpdate();
+	}
+	
+	public int delete(int id) throws Exception {
+		stmt = con.prepareStatement
+				("DELETE FROM TB_PROCESSO WHERE ID = ?");
+		stmt.setInt(1, id);
+		return stmt.executeUpdate();
+	}
+	
+	public int modificaProvPrat(String modProvPrat) throws Exception {
+		stmt = con.prepareStatement
+				("UPDATE TB_PROCESSO SET ST_PROVPRAT = ? WHERE ID = ?");
+		stmt.setString(1, modProvPrat);
+		stmt.setString(2, modProvPrat);
+		return stmt.executeUpdate();
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:186)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:175)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:160)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2020-08-31 22:58:13.790
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:186)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:175)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:160)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2020-08-31 22:58:13.793
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:186)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:175)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:160)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-08-31 22:58:14.788
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package br.com.projeto.crud;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import br.com.projeto.conexao.Conexao;
+import br.com.projeto.nambiquara.statusProcesso;
+
+public class CRUDProcesso {
+	
+	private Connection con;
+	private PreparedStatement stmt;
+	
+	public CRUDProcesso() throws Exception {
+		con = Conexao.conectar();
+	}
+	
+	public void fechar() throws Exception {
+		con.close();
+	}
+	
+	public int add(statusProcesso objeto) throws Exception {
+		stmt = con.prepareStatement
+				("INSERT INTO TB_PROCESSO ST_DOC, ST_PROVPRAT, ST_CONTRATA, ID");
+						+ ""
+						+ ""
+						+ "");
+		stmt.setString(1, objeto.getStatusDocumentacao());
+		stmt.setString(2, objeto.getStatusProvaPratica());
+		stmt.setString(3, objeto.getStatusContratacao());
+		stmt.setString(4, objeto.getId());
+		
+		return stmt.executeUpdate();
+	}
+	
+	public int delete(int id) throws Exception {
+		stmt = con.prepareStatement
+				("DELETE FROM TB_PROCESSO WHERE ID = ?");
+		stmt.setInt(1, id);
+		return stmt.executeUpdate();
+	}
+	
+	public int modificaProvPrat(String modProvPrat) throws Exception {
+		stmt = con.prepareStatement
+				("UPDATE TB_PROCESSO SET ST_PROVPRAT = ? WHERE ID = ?");
+		stmt.setString(1, modProvPrat);
+		stmt.setString(2, modProvPrat);
+		return stmt.executeUpdate();
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:450)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:209)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1315)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2020-08-31 22:58:14.793
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:450)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:209)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1315)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2020-08-31 22:58:14.799
+!MESSAGE Error in JDT Core during reconcile
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:450)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:209)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:736)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:802)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1315)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-08-31 22:58:14.811
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package br.com.projeto.crud;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import br.com.projeto.conexao.Conexao;
+import br.com.projeto.nambiquara.statusProcesso;
+
+public class CRUDProcesso {
+	
+	private Connection con;
+	private PreparedStatement stmt;
+	
+	public CRUDProcesso() throws Exception {
+		con = Conexao.conectar();
+	}
+	
+	public void fechar() throws Exception {
+		con.close();
+	}
+	
+	public int add(statusProcesso objeto) throws Exception {
+		stmt = con.prepareStatement
+				("INSERT INTO TB_PROCESSO ST_DOC, ST_PROVPRAT, ST_CONTRATA, ID");
+						+ ""
+						+ ""
+						+ "");
+		stmt.setString(1, objeto.getStatusDocumentacao());
+		stmt.setString(2, objeto.getStatusProvaPratica());
+		stmt.setString(3, objeto.getStatusContratacao());
+		stmt.setString(4, objeto.getId());
+		
+		return stmt.executeUpdate();
+	}
+	
+	public int delete(int id) throws Exception {
+		stmt = con.prepareStatement
+				("DELETE FROM TB_PROCESSO WHERE ID = ?");
+		stmt.setInt(1, id);
+		return stmt.executeUpdate();
+	}
+	
+	public int modificaProvPrat(String modProvPrat) throws Exception {
+		stmt = con.prepareStatement
+				("UPDATE TB_PROCESSO SET ST_PROVPRAT = ? WHERE ID = ?");
+		stmt.setString(1, modProvPrat);
+		stmt.setString(2, modProvPrat);
+		return stmt.executeUpdate();
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:186)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:161)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:136)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:251)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:386)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:362)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2020-08-31 22:58:14.816
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:186)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:161)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:136)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:251)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:386)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:362)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2020-08-31 22:58:14.819
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:186)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:161)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:136)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:251)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:386)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:362)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-08-31 22:58:14.831
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package br.com.projeto.crud;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import br.com.projeto.conexao.Conexao;
+import br.com.projeto.nambiquara.statusProcesso;
+
+public class CRUDProcesso {
+	
+	private Connection con;
+	private PreparedStatement stmt;
+	
+	public CRUDProcesso() throws Exception {
+		con = Conexao.conectar();
+	}
+	
+	public void fechar() throws Exception {
+		con.close();
+	}
+	
+	public int add(statusProcesso objeto) throws Exception {
+		stmt = con.prepareStatement
+				("INSERT INTO TB_PROCESSO ST_DOC, ST_PROVPRAT, ST_CONTRATA, ID");
+						+ ""
+						+ ""
+						+ "");
+		stmt.setString(1, objeto.getStatusDocumentacao());
+		stmt.setString(2, objeto.getStatusProvaPratica());
+		stmt.setString(3, objeto.getStatusContratacao());
+		stmt.setString(4, objeto.getId());
+		
+		return stmt.executeUpdate();
+	}
+	
+	public int delete(int id) throws Exception {
+		stmt = con.prepareStatement
+				("DELETE FROM TB_PROCESSO WHERE ID = ?");
+		stmt.setInt(1, id);
+		return stmt.executeUpdate();
+	}
+	
+	public int modificaProvPrat(String modProvPrat) throws Exception {
+		stmt = con.prepareStatement
+				("UPDATE TB_PROCESSO SET ST_PROVPRAT = ? WHERE ID = ?");
+		stmt.setString(1, modProvPrat);
+		stmt.setString(2, modProvPrat);
+		return stmt.executeUpdate();
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:161)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:136)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:251)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:386)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:362)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2020-08-31 22:58:14.836
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:161)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:136)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:251)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:386)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:362)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2020-08-31 22:58:14.840
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:161)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:136)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:251)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:386)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:362)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-08-31 22:58:14.851
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package br.com.projeto.crud;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import br.com.projeto.conexao.Conexao;
+import br.com.projeto.nambiquara.statusProcesso;
+
+public class CRUDProcesso {
+	
+	private Connection con;
+	private PreparedStatement stmt;
+	
+	public CRUDProcesso() throws Exception {
+		con = Conexao.conectar();
+	}
+	
+	public void fechar() throws Exception {
+		con.close();
+	}
+	
+	public int add(statusProcesso objeto) throws Exception {
+		stmt = con.prepareStatement
+				("INSERT INTO TB_PROCESSO ST_DOC, ST_PROVPRAT, ST_CONTRATA, ID");
+						+ ""
+						+ ""
+						+ "");
+		stmt.setString(1, objeto.getStatusDocumentacao());
+		stmt.setString(2, objeto.getStatusProvaPratica());
+		stmt.setString(3, objeto.getStatusContratacao());
+		stmt.setString(4, objeto.getId());
+		
+		return stmt.executeUpdate();
+	}
+	
+	public int delete(int id) throws Exception {
+		stmt = con.prepareStatement
+				("DELETE FROM TB_PROCESSO WHERE ID = ?");
+		stmt.setInt(1, id);
+		return stmt.executeUpdate();
+	}
+	
+	public int modificaProvPrat(String modProvPrat) throws Exception {
+		stmt = con.prepareStatement
+				("UPDATE TB_PROCESSO SET ST_PROVPRAT = ? WHERE ID = ?");
+		stmt.setString(1, modProvPrat);
+		stmt.setString(2, modProvPrat);
+		return stmt.executeUpdate();
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:161)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:136)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:251)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:386)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:362)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2020-08-31 22:58:14.854
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:161)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:136)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:251)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:386)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:362)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2020-08-31 22:58:14.857
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:161)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:136)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:251)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:386)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:362)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-08-31 22:58:14.867
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package br.com.projeto.crud;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import br.com.projeto.conexao.Conexao;
+import br.com.projeto.nambiquara.statusProcesso;
+
+public class CRUDProcesso {
+	
+	private Connection con;
+	private PreparedStatement stmt;
+	
+	public CRUDProcesso() throws Exception {
+		con = Conexao.conectar();
+	}
+	
+	public void fechar() throws Exception {
+		con.close();
+	}
+	
+	public int add(statusProcesso objeto) throws Exception {
+		stmt = con.prepareStatement
+				("INSERT INTO TB_PROCESSO ST_DOC, ST_PROVPRAT, ST_CONTRATA, ID");
+						+ ""
+						+ ""
+						+ "");
+		stmt.setString(1, objeto.getStatusDocumentacao());
+		stmt.setString(2, objeto.getStatusProvaPratica());
+		stmt.setString(3, objeto.getStatusContratacao());
+		stmt.setString(4, objeto.getId());
+		
+		return stmt.executeUpdate();
+	}
+	
+	public int delete(int id) throws Exception {
+		stmt = con.prepareStatement
+				("DELETE FROM TB_PROCESSO WHERE ID = ?");
+		stmt.setInt(1, id);
+		return stmt.executeUpdate();
+	}
+	
+	public int modificaProvPrat(String modProvPrat) throws Exception {
+		stmt = con.prepareStatement
+				("UPDATE TB_PROCESSO SET ST_PROVPRAT = ? WHERE ID = ?");
+		stmt.setString(1, modProvPrat);
+		stmt.setString(2, modProvPrat);
+		return stmt.executeUpdate();
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:161)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:136)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:251)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:386)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:362)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2020-08-31 22:58:14.869
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:161)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:136)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:251)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:386)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:362)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2020-08-31 22:58:14.872
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:161)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:136)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:263)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:251)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:105)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:360)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:346)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:386)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:362)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-08-31 22:58:16.172
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package br.com.projeto.crud;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import br.com.projeto.conexao.Conexao;
+import br.com.projeto.nambiquara.statusProcesso;
+
+public class CRUDProcesso {
+	
+	private Connection con;
+	private PreparedStatement stmt;
+	
+	public CRUDProcesso() throws Exception {
+		con = Conexao.conectar();
+	}
+	
+	public void fechar() throws Exception {
+		con.close();
+	}
+	
+	public int add(statusProcesso objeto) throws Exception {
+		stmt = con.prepareStatement
+				("INSERT INTO TB_PROCESSO ST_DOC, ST_PROVPRAT, ST_CONTRATA, ID");
+						+ ""
+						+ ""
+						+ "");
+		stmt.setString(1, objeto.getStatusDocumentacao());
+		stmt.setString(2, objeto.getStatusProvaPratica());
+		stmt.setString(3, objeto.getStatusContratacao());
+		stmt.setString(4, objeto.getId());
+		
+		return stmt.executeUpdate();
+	}
+	
+	public int delete(int id) throws Exception {
+		stmt = con.prepareStatement
+				("DELETE FROM TB_PROCESSO WHERE ID = ?");
+		stmt.setInt(1, id);
+		return stmt.executeUpdate();
+	}
+	
+	public int modificaProvPrat(String modProvPrat) throws Exception {
+		stmt = con.prepareStatement
+				("UPDATE TB_PROCESSO SET ST_PROVPRAT = ? WHERE ID = ?");
+		stmt.setString(1, modProvPrat);
+		stmt.setString(2, modProvPrat);
+		return stmt.executeUpdate();
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:175)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:160)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2020-08-31 22:58:16.176
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:175)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:160)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2020-08-31 22:58:16.179
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1276)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2020)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3750)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1932)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1963)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3023)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3302)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1513)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:271)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:263)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:196)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:175)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$3.run(SelectionListenerWithASTManager.java:160)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

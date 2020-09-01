@@ -21,10 +21,17 @@ public class CRUDVagas {
 	
 	public int add(dadosVaga objeto) throws Exception {
 		stmt = con.prepareStatement
-				("INSERT INTO TB_PROCESSO"
-						+ "(ID_VAGA, DET_VAGA, CURSO, CERTIFICADO, IDIOMA,"
-						+ "DEFICIENCIA, DEPARTAMENTO, PROVA_PRAT");
-		stmt.setInt(1, objeto.getId());
+				("INSERT INTO TB_VAGAS ("
+						+ "ID_VAGA, "
+						+ "DET_VAGA, "
+						+ "CURSO, "
+						+ "CERTIFICADO, "
+						+ "IDIOMA, "
+						+ "DEFICIENCIA, "
+						+ "DEPARTAMENTO, "
+						+ "PROVA_PRAT) "
+						+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+		stmt.setString(1, objeto.getId());
 		stmt.setString(2, objeto.getDetalhesVaga());
 		stmt.setString(3, objeto.getCurso());
 		stmt.setString(4, objeto.getCertificado());
