@@ -1,0 +1,14 @@
+package br.com.projeto.implementacao;
+
+import br.com.projeto.nambiquara.statusProcesso;
+
+public class TesteUpdateProcesso {
+
+	public static void main(String[] args) {
+		statusProcesso processo = new statusProcesso();
+		
+		
+
+	}
+
+}
