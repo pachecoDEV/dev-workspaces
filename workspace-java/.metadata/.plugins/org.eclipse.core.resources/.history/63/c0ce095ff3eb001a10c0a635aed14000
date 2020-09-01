@@ -32,6 +32,7 @@ public class templateUsuario {
 		this.certificacao = certificacao;
 		this.cpf = cpf;
 		this.idioma = idioma;
+		this.login = login;
 		this.pretencaoSalarial = pretencaoSalarial;
 		this.deficiencia = deficiencia;
 		this.senha = senha;
@@ -102,6 +103,14 @@ public class templateUsuario {
 
 	public void setIdioma(String idioma) {
 		this.idioma = idioma;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 	public String getPretencaoSalarial() {

@@ -9,6 +9,7 @@ public class templateUsuario {
     private String certificacao;
     private String cpf;
     private String idioma;
+    private String login;
     private String pretencaoSalarial;
     private String deficiencia;
     private String senha;
@@ -21,7 +22,7 @@ public class templateUsuario {
 	}
 
 	public templateUsuario(String nome, String email, String endereco, String telefone, String curso,
-			String certificacao, String cpf, String idioma, String pretencaoSalarial, String deficiencia,
+			String certificacao, String cpf, String idioma, String login, String pretencaoSalarial, String deficiencia,
 			String senha, String cargo, String departamento, String nivel) {
 		super();
 		this.nome = nome;
@@ -32,6 +33,7 @@ public class templateUsuario {
 		this.certificacao = certificacao;
 		this.cpf = cpf;
 		this.idioma = idioma;
+		this.login = login;
 		this.pretencaoSalarial = pretencaoSalarial;
 		this.deficiencia = deficiencia;
 		this.senha = senha;
@@ -104,6 +106,14 @@ public class templateUsuario {
 		this.idioma = idioma;
 	}
 
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
 	public String getPretencaoSalarial() {
 		return pretencaoSalarial;
 	}
@@ -151,5 +161,5 @@ public class templateUsuario {
 	public void setNivel(String nivel) {
 		this.nivel = nivel;
 	}
-}
+
     

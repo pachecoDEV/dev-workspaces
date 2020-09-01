@@ -26,7 +26,7 @@ public class CRUDUsuario {
 						+ "CERTIFICACAO, IDIOMA, PRET_SAL, "
 						+ "DEFICIENCIA, SENHA, CARGO, DEPARTAMENTO, NIVEL) "
 						+ "VALUES (?, ?, ?, ?, ?, ?, ?, "
-						+ "?, ?, ?, ?, ?, ?, ?)");
+						+ "?, ?, ?, ?, ?, ?, ?, ?)");
 		stmt.setString(1, objeto.getCpf());
 		stmt.setString(2, objeto.getNome());
 		stmt.setString(3, objeto.getEmail());
@@ -35,12 +35,12 @@ public class CRUDUsuario {
 		stmt.setString(6, objeto.getCurso());
 		stmt.setString(7, objeto.getCertificacao());
 		stmt.setString(8, objeto.getIdioma());
-		stmt.setString(9, objeto.getPretencaoSalarial());
-		stmt.setString(10, objeto.getDeficiencia());
-		stmt.setString(11, objeto.getSenha());
-		stmt.setString(12, objeto.getCargo());
-		stmt.setString(13, objeto.getDepartamento());
-		stmt.setString(14, objeto.getNivel());
+		stmt.setString(10, objeto.getPretencaoSalarial());
+		stmt.setString(11, objeto.getDeficiencia());
+		stmt.setString(12, objeto.getSenha());
+		stmt.setString(13, objeto.getCargo());
+		stmt.setString(14, objeto.getDepartamento());
+		stmt.setString(15, objeto.getNivel());
 		
 		return stmt.executeUpdate();
 	}

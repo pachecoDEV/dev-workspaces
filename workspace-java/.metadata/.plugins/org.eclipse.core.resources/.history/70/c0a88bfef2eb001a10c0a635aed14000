@@ -14,7 +14,7 @@ public class TesteAddUsuario {
 			CRUDUsuario crudUsuario = new CRUDUsuario(); 
 			templateUsuario usuario = new templateUsuario();
 			usuario.setCpf(JOptionPane.showInputDialog("CPF"));
-			usuario.setNome(JOptionPane.showInputDialog("NOME"));
+			usuario.setCpf(JOptionPane.showInputDialog("CPF"));
 			usuario.setEmail(JOptionPane.showInputDialog("EMAIL"));
 			usuario.setEndereco(JOptionPane.showInputDialog("Endereço"));
 			usuario.setTelefone(JOptionPane.showInputDialog("Telefone"));
