@@ -1,0 +1,41 @@
+package br.com.projeto.implementacao;
+
+import javax.swing.JOptionPane;
+
+import br.com.projeto.crud.CRUDUsuario;
+import br.com.projeto.exception.Excecao;
+import br.com.projeto.nambiquara.templateUsuario;
+
+public class TesteAddUsuario {
+
+	public static void main(String[] args) {
+		
+		try {
+			CRUDUsuario crudUsuario = new CRUDUsuario(); 
+			templateUsuario usuario = new templateUsuario();
+			usuario.setCpf(JOptionPane.showInputDialog("CPF"));
+			usuario.setEmail(JOptionPane.showInputDialog("EMAIL"));
+			usuario.setEndereco(JOptionPane.showInputDialog("Endereço"));
+			usuario.setTelefone(JOptionPane.showInputDialog("EMAIL"));
+			usuario.setCurso(JOptionPane.showInputDialog("EMAIL"));
+			usuario.setCertificacao(JOptionPane.showInputDialog("EMAIL"));
+			usuario.setIdioma(JOptionPane.showInputDialog("EMAIL"));
+			usuario.setLogin(JOptionPane.showInputDialog("EMAIL"));
+			usuario.setPretencaoSalarial(JOptionPane.showInputDialog("EMAIL"));
+			usuario.setDeficiencia(JOptionPane.showInputDialog("EMAIL"));
+			usuario.setSenha(JOptionPane.showInputDialog("EMAIL"));
+			usuario.setCargo(JOptionPane.showInputDialog("EMAIL"));
+			usuario.setDepartamento(JOptionPane.showInputDialog("EMAIL"));
+			usuario.setNivel(JOptionPane.showInputDialog("EMAIL"));
+		
+			if (dao.add(cargo)==0) {
+				System.out.println("Não gravou");
+			} else {
+				System.out.println("Gravado");
+			}
+		} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(Excecao.tratarExcecao(e));
+		}
+	}
+}

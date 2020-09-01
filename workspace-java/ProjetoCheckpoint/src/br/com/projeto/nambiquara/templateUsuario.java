@@ -15,12 +15,11 @@ public class templateUsuario extends nambiquaraRh implements Serializable{
     private String idioma;
     private String login;
     private String pretencaoSalarial;
-    private boolean deficiencia;
+    private String deficiencia;
     private String senha;
     private String cargo;
     private String departamento;
     private String nivel;
-
 
     public void CadastroCandidato() {
 
@@ -67,8 +66,8 @@ public class templateUsuario extends nambiquaraRh implements Serializable{
         if (idiomasSimOuNao == JOptionPane.YES_OPTION) {
             int i = 0;
             while (i<idiomasQuantidade){
-                String idimoa = JOptionPane.showInputDialog(null, "Idioma: ", "..:: Cadastrando Idiomas ::..", 1);
-                setIdioma(idimoa);
+                String idioma = JOptionPane.showInputDialog(null, "Idioma: ", "..:: Cadastrando Idiomas ::..", 1);
+                setIdioma(idioma);
                 i++;
             }
         }
@@ -77,12 +76,6 @@ public class templateUsuario extends nambiquaraRh implements Serializable{
         setLogin(login);
         String pretencaoSalarial = JOptionPane.showInputDialog(null, "Digite seu pretencaoSalarial!", ".:Cadastro:.", 1);
         setPretencaoSalarial(pretencaoSalarial);
-        int deficienciayn = JOptionPane.showConfirmDialog(null, "Digite seu deficiencia!", ".:Cadastro:.",JOptionPane.YES_NO_OPTION);
-            if (deficienciayn == JOptionPane.YES_OPTION) {
-                deficiencia = true;
-            } else {
-                deficiencia = false;
-            }
         setDeficiencia(deficiencia);
         String senha = JOptionPane.showInputDialog(null, "Digite sua senha!", ".:Cadastro:.", 1);
         setEmail(senha);
@@ -169,11 +162,11 @@ public class templateUsuario extends nambiquaraRh implements Serializable{
         this.pretencaoSalarial = pretencaoSalarial;
     }
 
-    public boolean isDeficiencia() {
+    public String getIsDeficiencia() {
         return deficiencia;
     }
 
-    public void setDeficiencia(boolean deficiencia) {
+    public void setDeficiencia(String deficiencia) {
         this.deficiencia = deficiencia;
     }
 
@@ -208,5 +201,9 @@ public class templateUsuario extends nambiquaraRh implements Serializable{
     public void setNivel(String nivel) {
         this.nivel = nivel;
     }
+
+	public int add(templateUsuario usuario) {
+		return 0;
+	}
 
 }

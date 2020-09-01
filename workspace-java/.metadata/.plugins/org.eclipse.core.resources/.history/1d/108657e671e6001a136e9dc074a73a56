@@ -1,0 +1,30 @@
+package br.com.projeto.implementacao;
+
+import javax.swing.JOptionPane;
+
+import br.com.projeto.beans.Cargo;
+import br.com.projeto.dao.CargoDAO;
+import br.com.projeto.exception.Excecao;
+
+public class TesteDeleteCargo {
+
+	public static void main(String[] args) {
+		try {
+			CargoDAO dao = new CargoDAO();
+			
+			Cargo cargo = new Cargo();
+			dao.delete(id)
+		
+			if (dao.delete(id)==0) {
+				System.out.println("Não deletou");
+			} else {
+				System.out.println("Deletou");
+			}
+		} catch (Exception e) {
+				e.printStackTrace();
+				System.out.println(Excecao.tratarExcecao(e));
+		}
+
+	}
+
+}

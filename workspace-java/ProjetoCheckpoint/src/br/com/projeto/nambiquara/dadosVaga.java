@@ -4,14 +4,23 @@ import java.io.Serializable;
 
 public class dadosVaga extends nambiquaraRh implements Serializable {
 
+	private int id;
     private String detalhesVaga;
     private String curso;
     private String certificado;
     private String idioma;
     private String deficiencia;
     private String departamento;
-    private boolean provaPratica;
+    private String provaPratica;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getDetalhesVaga() {
         return detalhesVaga;
     }
@@ -60,11 +69,11 @@ public class dadosVaga extends nambiquaraRh implements Serializable {
         this.departamento = departamento;
     }
 
-    public boolean isProvaPratica() {
+    public String getProvaPratica() {
         return provaPratica;
     }
 
-    public void setProvaPratica(boolean provaPratica) {
+    public void setProvaPratica(String provaPratica) {
         this.provaPratica = provaPratica;
     }
 

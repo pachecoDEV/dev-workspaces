@@ -6,6 +6,7 @@ public class statusProcesso extends nambiquaraRh implements Serializable{
     private String statusDocumentacao;
     private String statusProvaPratica;
     private String statusContratacao;
+    private int id;
 
     public String getStatusDocumentacao() {
         return statusDocumentacao;
@@ -29,6 +30,14 @@ public class statusProcesso extends nambiquaraRh implements Serializable{
 
     public void setStatusContratacao(String statusContratacao) {
         this.statusContratacao = statusContratacao;
+    }
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
  
 }

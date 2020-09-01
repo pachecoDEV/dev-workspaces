@@ -45,7 +45,8 @@ public class CargoDAO {
 
 	public int modifySalary(String nome) throws Exception {
 		stmt = con.prepareStatement
-			("UPDATE TB_CARGO SET VL_SALARIO = VL_SALARIO * 1.1 WHERE NM_CARGO = ?");
+			("UPDATE TB_CARGO SET VL_SALARIO = "
+					+ "VL_SALARIO * 1.1 WHERE NM_CARGO = ?");
 		stmt.setString(1, nome);
 		/*
 		3 executes()

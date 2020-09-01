@@ -1,0 +1,15 @@
+package br.com.projeto.crud;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class CRUD {
+	
+	private Connection con;
+	private PreparedStatement stmt;
+	private ResultSet rs;
+	
+	public CRUD() 
+
+}

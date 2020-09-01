@@ -1,0 +1,44 @@
+package br.com.projeto.implementacao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import br.com.conexao.exception.Excecao;
+
+public class TesteConexao {
+    public static void main(String[] args) {
+        Connection fiap =null;
+        Statement estrutura = null;
+        ResultSet resultado = null;
+        try {
+            fiap = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL","rm85833","170294");
+            estrutura = fiap.createStatement();
+            resultado = estrutura.executeQuery("select * from tb_cliente");
+            resultado.next();
+            System.out.println(resultado.getString("nome"));
+            System.out.println(resultado.getInt("id"));
+            
+            
+            resultado.next();
+            System.out.println(resultado.getString("nome"));
+            System.out.println(resultado.getInt("id"));
+            
+            resultado.next();
+            System.out.println(resultado.getString("nome"));
+            System.out.println(resultado.getInt("id"));
+            
+            
+        }catch (Exception e) {
+            System.out.println(Excecao.tratarExcecao(e));
+            e.printStackTrace();
+        }finally {
+            try {
+                fiap.close();
+            }catch(Exception e) {
+                System.out.println(Excecao.tratarExcecao(e));
+            }
+        }
+    }
+}
