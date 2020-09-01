@@ -19,5 +19,13 @@
     <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="br.com.projeto.conexao.Conexao"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="br.com.projeto.nambiquara.templateUsuario"/>
+    <fullyQualifiedTypeName name="br.com.projeto.crud.CRUDUsuario"/>
+    <fullyQualifiedTypeName name="br.com.projeto.nambiquara.statusProcesso"/>
+    <fullyQualifiedTypeName name="br.com.projeto.crud.CRUDProcesso"/>
+    <fullyQualifiedTypeName name="br.com.projeto.crud.CRUDVagas"/>
+    <fullyQualifiedTypeName name="br.com.projeto.nambiquara.dadosVaga"/>
 </qualifiedTypeNameHistroy>

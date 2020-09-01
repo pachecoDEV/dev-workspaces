@@ -1,7 +1,0 @@
-package br.com.projeto.crud;
-
-import java.sql.connection;
-
-public class CRUD {
-
-}

@@ -16,20 +16,20 @@ public class TesteAddUsuario {
 			usuario.setCpf(JOptionPane.showInputDialog("CPF"));
 			usuario.setNome(JOptionPane.showInputDialog("NOME"));
 			usuario.setEmail(JOptionPane.showInputDialog("EMAIL"));
-			usuario.setEndereco(JOptionPane.showInputDialog("Endereço"));
+			usuario.setEndereco(JOptionPane.showInputDialog("Endereï¿½o"));
 			usuario.setTelefone(JOptionPane.showInputDialog("Telefone"));
 			usuario.setCurso(JOptionPane.showInputDialog("Curso"));
 			usuario.setCertificacao(JOptionPane.showInputDialog("Certificado"));
 			usuario.setIdioma(JOptionPane.showInputDialog("Idioma"));
-			usuario.setPretencaoSalarial(JOptionPane.showInputDialog("Pretenção Salarial"));
+			usuario.setPretencaoSalarial(JOptionPane.showInputDialog("Pretenï¿½ï¿½o Salarial"));
 			usuario.setDeficiencia(JOptionPane.showInputDialog("Deficiencia"));
 			usuario.setSenha(JOptionPane.showInputDialog("Senha"));
 			usuario.setCargo(JOptionPane.showInputDialog("Cargo"));
 			usuario.setDepartamento(JOptionPane.showInputDialog("Departamento"));
-			usuario.setNivel(JOptionPane.showInputDialog("Nível"));
+			usuario.setNivel(JOptionPane.showInputDialog("Nivel"));
 		
 			if (crudUsuario.add(usuario)==0) {
-				System.out.println("Não gravou");
+				System.out.println("Nao gravou");
 			} else {
 				System.out.println("Gravado");
 			}
