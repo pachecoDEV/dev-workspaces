@@ -12,7 +12,7 @@ public class TesteDeleteCargo {
 		try {
 			CargoDAO dao = new CargoDAO();
 			Cargo cargo = new Cargo();
-			System.out.println("Você apagou: " +
+			System.out.println("Voce apagou: " +
 					dao.delete(Integer.parseInt(JOptionPane.showInputDialog("ID"))) + " cargo(s)");
 			
 		} catch (Exception e) {

@@ -1,0 +1,17 @@
+package br.com.projeto.implementacao;
+
+import br.com.projeto.exception.Excecao;
+
+public class TesteUpdateProcesso {
+
+	public static void main(String[] args) {
+		try {
+			CRUDProcesso
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(Excecao.tratarExcecao(e));
+		}
+
+	}
+
+}
