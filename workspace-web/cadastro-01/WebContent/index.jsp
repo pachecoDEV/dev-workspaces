@@ -19,7 +19,7 @@
 	<div></div>
 
 	<section>
-		<form>
+		<form action="cliente" method="POST">
 			<fieldset>
 				<legend>Cadastro de Clientes</legend>
 				
