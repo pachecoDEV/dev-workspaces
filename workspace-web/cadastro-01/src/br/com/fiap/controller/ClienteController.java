@@ -68,7 +68,24 @@ public class ClienteController extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
+		//RECEPÇÃO DOS DADOS DO REQUEST - INÍCIO
+		
+		//Criar uma instância de cliente
+		Cliente cli = new Cliente();
+		
+		//Popular o cliente com os dados do request utilizando o método getParameter(NomeDoCampo)
+		cli.setNome(request.getParameter("txtNm"));
+		cli.setSobrenome(request.getParameter("txtSnm"));
+		cli.setDataNasc(request.getParameter("txtDtNasc"));
+		cli.setGenero(request.getParameter("txtGen").charAt(0));
+		cli.setTelefone(request.getParameter("txtTel"));
+		
+		//Adicionando na lista
+		lista.add(cli);
+		
+		//RECEPÇÃO DOS DADOS DO REQUEST - FIM
+		
 	}
 
 }
