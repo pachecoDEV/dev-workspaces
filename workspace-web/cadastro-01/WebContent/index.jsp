@@ -47,10 +47,14 @@
 				</div>
 				
 				<div class="form-group">
-					<label class="control-label col-sm-4" for="idSnm">Sobrenome</label>
+					<label class="control-label col-sm-4" for="idGen">Gênero</label>
 					<div class="col-sm-8">
-						<input type="text" name="txtSnm" id="idSnm" class="form-control"
-							placeholder="Digite seu sobrenome." required="required">
+						<select name="txtGen" id="idGen" class="form-control" required="required">
+							<option value="0" selected="selected">Selecione sua opção</option>
+							<option value="m">Masculino</option>
+							<option value="f">Feminino</option>
+							<option value="o">Outros</option>
+						</select>
 					</div>
 				</div>
 				

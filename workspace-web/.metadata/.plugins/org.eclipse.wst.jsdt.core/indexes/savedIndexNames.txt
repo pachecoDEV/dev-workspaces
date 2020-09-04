@@ -1,7 +1,5 @@
 INDEX VERSION 1.4+C:\Users\APCOUTO\Google Drive\dev-workspaces\workspace-web\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-1205973491.index
 2771118015.index
-101752884.index
-2417252245.index
 3138391289.index
-1299009155.index
+1205973491.index
+2417252245.index
