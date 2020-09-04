@@ -58,6 +58,21 @@
 					</div>
 				</div>
 				
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="idTel">Telefone</label>
+					<div class="col-sm-8">
+						<input type="tel" name="txtTel" id="idTel" class="form-control"
+							placeholder="(99)99999-9999" required="required"
+							pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-success bt-lg">Cadastrar</button>
+					</div>
+				</div>
+				
 			</fieldset>
 		</form>
 	</section>
