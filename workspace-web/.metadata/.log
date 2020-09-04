@@ -1440,3 +1440,9 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.wst.server.core 4 0 2020-09-03 21:51:44.579
 !MESSAGE Cannot publish to the server because it is missing its runtime environment.
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-03 22:14:21.730
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.eclipse.wst.html.ui 1 1 2020-09-03 22:14:21.732
+!MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
