@@ -22,12 +22,38 @@
 		<form>
 			<fieldset>
 				<legend>Cadastro de Clientes</legend>
+				
 				<div class="form-group">
 					<label class="control-label col-sm-4" for="idNm">Nome</label>
 					<div class="col-sm-8">
-						<input type="text" name="txtNm" id="idNm" class="form-control" placeholder="Digite seu nome." required="required">
+						<input type="text" name="txtNm" id="idNm" class="form-control"
+							placeholder="Digite seu nome." required="required">
 					</div>
 				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="idSnm">Sobrenome</label>
+					<div class="col-sm-8">
+						<input type="text" name="txtSnm" id="idSnm" class="form-control"
+							placeholder="Digite seu sobrenome." required="required">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="idDtNasc">Data Nascimento</label>
+					<div class="col-sm-8">
+						<input type="date" name="txtDtNasc" id="idDtNasc" class="form-control" required="required">
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="idSnm">Sobrenome</label>
+					<div class="col-sm-8">
+						<input type="text" name="txtSnm" id="idSnm" class="form-control"
+							placeholder="Digite seu sobrenome." required="required">
+					</div>
+				</div>
+				
 			</fieldset>
 		</form>
 	</section>
