@@ -30,7 +30,6 @@ INDEX VERSION 1.131+C:\Users\APCOUTO\Google Drive\dev-workspaces\workspace-web\.
 3652339832.index
 4146096971.index
 1932408098.index
-3138391289.index
 3817810948.index
 1648759654.index
 2417252245.index
