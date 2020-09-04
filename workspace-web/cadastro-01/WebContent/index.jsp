@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./css/bootstrap.css">
 
@@ -47,10 +47,10 @@
 				</div>
 				
 				<div class="form-group">
-					<label class="control-label col-sm-4" for="idGen">Gênero</label>
+					<label class="control-label col-sm-4" for="idGen">GÃªnero</label>
 					<div class="col-sm-8">
 						<select name="txtGen" id="idGen" class="form-control" required="required">
-							<option value="0" selected="selected">Selecione sua opção</option>
+							<option value="0" selected="selected">Selecione sua opÃ§Ã£o</option>
 							<option value="m">Masculino</option>
 							<option value="f">Feminino</option>
 							<option value="o">Outros</option>
