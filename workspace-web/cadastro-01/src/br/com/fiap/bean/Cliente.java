@@ -43,7 +43,7 @@ public class Cliente implements Serializable{
 	}
 	
 	public void setDataNasc(String dataNasc) {
-		SimpleDateFormat sf = new SimpleDateFormat();
+		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
 		try {
 			this.dataNasc = sf.parse(dataNasc);
 		} catch (ParseException e) {

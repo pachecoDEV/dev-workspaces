@@ -1,6 +1,8 @@
 package br.com.fiap.controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,14 +33,16 @@ public class ClienteController extends HttpServlet {
         super();
         
         if (lista == null) {
+        	
 			//Implementando a lista com um ArrayList do tipo Cliente
         	lista = new ArrayList<Cliente>();
+        	
         	//Criando um instância de Cliente
         	Cliente cli = new Cliente();
         	//Populando o cliente com os dados
         	cli.setNome("Alexandre");
         	cli.setSobrenome("Couto");
-        	cli.setDataNasc("16/01/1985");
+        	cli.setDataNasc("1985-01-16");
         	cli.setGenero('m');
         	cli.setTelefone("(11) 95041-3721");
         	//Adicionando na lista
@@ -49,7 +53,7 @@ public class ClienteController extends HttpServlet {
         	cli = new Cliente();
         	cli.setNome("Roberta");
         	cli.setSobrenome("Pellegrini");
-        	cli.setDataNasc("13/04/1983");
+        	cli.setDataNasc("1983-04-13");
         	cli.setGenero('f');
         	cli.setTelefone("(11) 98606-6357");
         	lista.add(cli);
@@ -57,7 +61,7 @@ public class ClienteController extends HttpServlet {
         	cli = new Cliente();
         	cli.setNome("Rafael");
         	cli.setSobrenome("Pacheco");
-        	cli.setDataNasc("18/01/2018");
+        	cli.setDataNasc("2018-01-18");
         	cli.setGenero('m');
         	cli.setTelefone("(11) 5189-1095");
         	lista.add(cli);
@@ -86,6 +90,18 @@ public class ClienteController extends HttpServlet {
 		
 		//RECEPÇÃO DOS DADOS DO REQUEST - FIM
 		
+		//Adicionando a lista em um atributo no request utilizando o método setAttribute(nomeAtributo, Objeto)
+		request.setAttribute("listaCli", lista);
+		
+		//ENCAMINHAMENTO DO REQUEST/RESPONSE - INÍCIO
+		
+		//Criar o dispatcher através da interface RequestDispatcher e passa para ela a URI/URL de destino
+		RequestDispatcher rd = request.getRequestDispatcher("");
+		
+		//Utilizando o método forward nós passamos o request e o response finalmente
+		rd.forward(request, response);
+		
+		//ENCAMINHAMENTO DO REQUEST/RESPONSE - FIM		
 	}
 
 }
