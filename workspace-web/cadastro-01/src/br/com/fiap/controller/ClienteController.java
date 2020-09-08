@@ -20,7 +20,7 @@ import java.util.List;
 		description = "Controle de acesso e fluxo de informações.",
 		urlPatterns = { 
 				"/cliente", 
-				"/listar"
+				"/lista"
 		})
 
 public class ClienteController extends HttpServlet {
