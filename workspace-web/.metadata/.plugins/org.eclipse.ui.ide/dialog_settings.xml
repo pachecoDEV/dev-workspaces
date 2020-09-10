@@ -6,6 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\APCOUTO\Google Drive\FIAP\1TDST - ANO 1\Challenge B2W\B2W - Entregaveis\SegundoSemestre\Responsive Web Development\rwd-challenges-master"/>
 			<item value="C:\Users\APCOUTO\Google Drive\dev-workspaces\workspace-web\1-tdst Web"/>
 			<item value="C:\Users\APCOUTO\Google Drive\dev-workspaces\workspace-web\competition"/>
 			<item value="C:\Users\APCOUTO\Google Drive\dev-workspaces\workspace-web"/>
