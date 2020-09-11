@@ -21,7 +21,7 @@
 
 	<section>
 	
-		<table>
+		<table border="1">
 			<tr>
 				<th>ID</th>
 				<th>Nome</th>

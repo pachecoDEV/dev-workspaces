@@ -78,7 +78,11 @@ public class ClienteController extends HttpServlet {
 		//Criar uma instância de cliente
 		Cliente cli = new Cliente();
 		
+		//DAO - Data Access Object
+		//BO - Business Object
+		
 		//Popular o cliente com os dados do request utilizando o método getParameter(NomeDoCampo)
+		//getParameter(NomeDoCampo)
 		cli.setNome(request.getParameter("txtNm"));
 		cli.setSobrenome(request.getParameter("txtSnm"));
 		cli.setDataNasc(request.getParameter("txtDtNasc"));
@@ -96,7 +100,7 @@ public class ClienteController extends HttpServlet {
 		//ENCAMINHAMENTO DO REQUEST/RESPONSE - INÍCIO
 		
 		//Criar o dispatcher através da interface RequestDispatcher e passa para ela a URI/URL de destino
-		RequestDispatcher rd = request.getRequestDispatcher("");
+		RequestDispatcher rd = request.getRequestDispatcher("lista.jsp");
 		
 		//Utilizando o método forward nós passamos o request e o response finalmente
 		rd.forward(request, response);
