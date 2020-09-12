@@ -4,17 +4,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<%@ include file="imports.jsp" %>
-<title>Insert title here</title>
+
+	<%@ include file="imports.jsp" %>
+	
+<title>INFO-IMG</title>
 </head>
 <body>
-
 	<div>
-		<fieldset>
+		<p>COM SCRIPTLETS</p>
+		<span><%=request.getParameter("imgUrl") %></span>
+	</div>
+	<div>
+		<figure>
 			<img alt="" src="${param.imgUrl}">
-		</fieldset>
+		</figure>
+	</div>
+	<div>
+		<a href="index.jsp">Início</a>
 	</div>
 
 	<%@ include file="rodape.jsp" %>
+	
 </body>
 </html>

@@ -14,7 +14,7 @@ public class TesteConexao {
 		try {
 			new Conexao();
 			c = Conexao.conectar();
-			JOptionPane.showMessageDialog(null, "*** Abriu conex„o ***");
+			JOptionPane.showMessageDialog(null, "*** Abriu conex√£o ***");
 		} catch (Exception e) {
 			System.out.println(Excecao.tratarExcecao(e));
 			e.printStackTrace();

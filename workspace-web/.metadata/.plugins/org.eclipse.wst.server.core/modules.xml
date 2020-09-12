@@ -3,5 +3,6 @@
   <module moduleId="org.eclipse.jst.jee.server:controle-acesso" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:fixacao-01" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:competition-ct" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:ExemploJSP" serverId="Tomcat v9.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:cadastro-01" serverId="Tomcat v9.0 Server at localhost"/>
 </modules>
