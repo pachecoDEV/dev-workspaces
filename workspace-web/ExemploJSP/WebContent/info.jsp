@@ -4,9 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<%@ include file="imports.jsp" %>
 <title>Insert title here</title>
 </head>
 <body>
 
+	<div>
+		<fieldset>
+			<img alt="" src="${param.imgUrl}">
+		</fieldset>
+	</div>
+
+	<%@ include file="rodape.jsp" %>
 </body>
 </html>

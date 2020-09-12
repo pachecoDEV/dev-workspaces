@@ -8,5 +8,11 @@
 </head>
 <body>
 
+	<footer>
+		<h2></h2>
+	</footer>
+	<script type="text/javascript" src=".js/jquery-3.5.1.js"></script>
+	<script type="text/javascript" src=".js/bootstrap.js"></script>
+	
 </body>
 </html>

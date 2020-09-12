@@ -4,9 +4,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<%@ include file="imports.jsp" %>
+	
 <title>Insert title here</title>
 </head>
 <body>
 
+	<header>
+		<nav class="nav">
+			<ul>
+				<li class="nav-item"><a href="info.jsp?imgUrl=./img/jsp-1.png">IMG-1</a></li>
+				<li class="nav-item"><a href="info.jsp?imgUrl=./img/jsp-2.png">IMG-2</a></li>
+				<li class="nav-item"><a href="info.jsp?imgUrl=./img/jsp-3.png">IMG-3</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<%@ include file="rodape.jsp" %>
+	
 </body>
 </html>
