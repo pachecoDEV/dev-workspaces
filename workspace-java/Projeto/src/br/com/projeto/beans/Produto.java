@@ -1,0 +1,75 @@
+package br.com.projeto.beans;
+
+public class Produto {
+	
+	/*
+	 * Monta a tabela no BD
+	 * Monta o Beans (construtores/getters e setters)
+	 * Montar o DAO:
+	 * 		método para cadastrar, consultar pela descrição, apagar pelo ID e alterar valorCompra e valorVenda
+	 * Montar o BO:
+	 * 		método para cadastrar, consultar e alterar o DAO
+	 * TesteProdutoBO
+	 * 
+	 * */
+	
+	private int id;
+	private int valorCompra;
+	private int valorVenda;
+	private int qtde;
+	private String descricao;
+	
+	public Produto() {
+		super();
+	}
+	
+	public Produto(int id, int valorCompra, int valorVenda, int qtde, String descricao) {
+		super();
+		this.id = id;
+		this.valorCompra = valorCompra;
+		this.valorVenda = valorVenda;
+		this.qtde = qtde;
+		this.descricao = descricao;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public float getValorCompra() {
+		return valorCompra;
+	}
+
+	public void setValorCompra(int valorCompra) {
+		this.valorCompra = valorCompra;
+	}
+
+	public float getValorVenda() {
+		return valorVenda;
+	}
+
+	public void setValorVenda(int valorVenda) {
+		this.valorVenda = valorVenda;
+	}
+
+	public int getQtde() {
+		return qtde;
+	}
+
+	public void setQtde(int qtde) {
+		this.qtde = qtde;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+}

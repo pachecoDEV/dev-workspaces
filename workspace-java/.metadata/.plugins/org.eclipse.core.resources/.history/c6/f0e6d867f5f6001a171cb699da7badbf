@@ -1,0 +1,16 @@
+package br.com.projeto.implementacao;
+
+public class TesteCadastrarProduto {
+
+	public static void main(String[] args) {
+		try {
+			ProdutoDAO dao = new ProdutoDAO();
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+	}
+
+}

@@ -1,0 +1,14 @@
+package br.com.projeto.beans;
+
+public class Produto {
+	
+	/*
+	 * Monta a tabela no BD
+	 * Monta o Beans (construtores/getters e setters)
+	 * Montar o DAO:
+	 * 		método para cadastrar, consultar pela descrição, apagar pelo ID e alterar valorCompra e valorVenda
+	 * 		
+	 * 
+	 * */
+
+}

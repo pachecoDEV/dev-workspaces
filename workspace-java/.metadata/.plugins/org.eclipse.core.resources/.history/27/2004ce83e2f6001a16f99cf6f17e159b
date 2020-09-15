@@ -1,0 +1,12 @@
+package br.com.projeto.implementacao;
+
+import javax.swing.JOptionPane;
+
+public class TesteCargoBO {
+
+	public static void main(String[] args) {
+		char resp = JOptionPane
+
+	}
+
+}

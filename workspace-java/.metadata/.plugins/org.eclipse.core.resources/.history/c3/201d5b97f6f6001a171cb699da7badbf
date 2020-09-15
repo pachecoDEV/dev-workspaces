@@ -1,0 +1,24 @@
+package br.com.projeto.implementacao;
+
+import javax.swing.JOptionPane;
+
+import br.com.projeto.beans.Produto;
+import br.com.projeto.dao.ProdutoDAO;
+
+public class TesteCadastrarProduto {
+
+	public static void main(String[] args) {
+		try {
+			ProdutoDAO dao = new ProdutoDAO();
+			Produto produto = new Produto();
+			produto.setId(Integer.parseInt(JOptionPane.showInputDialog("ID")));
+			produto.setValorCompra(Integer.parseInt(JOptionPane.showImputDialog("Valor de Compra")));
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+	}
+
+}

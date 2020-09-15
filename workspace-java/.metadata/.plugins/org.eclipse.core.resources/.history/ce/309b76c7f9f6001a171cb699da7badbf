@@ -1,0 +1,29 @@
+package br.com.projeto.implementacao;
+
+import javax.swing.JOptionPane;
+
+import br.com.projeto.beans.Produto;
+import br.com.projeto.dao.ProdutoDAO;
+import br.com.projeto.exception.Excecao;
+import br.com.projeto.util.Magic;
+
+public class TesteConsultarProduto {
+
+	public static void main(String[] args) {
+		try {
+			ProdutoDAO dao = new ProdutoDAO();
+			Produto consultar = 
+					dao.consultar(Magic.s("Descrição"));
+			JOptionPane.showMessageDialog(null, consultar.getId());
+			JOptionPane.showMessageDialog(null, consultar.getValorCompra());
+			JOptionPane.showMessageDialog(null, consultar.getValorVenda());
+			JOptionPane.showMessageDialog(null, consultar.getQtde());
+			JOptionPane.showMessageDialog(null, consultar.getDescricao());
+			dao.fechar();
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, Excecao.tratarExcecao(e));
+		}
+
+	}
+
+}

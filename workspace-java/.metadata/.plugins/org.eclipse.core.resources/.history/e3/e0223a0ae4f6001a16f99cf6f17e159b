@@ -1,0 +1,34 @@
+package br.com.projeto.implementacao;
+
+import javax.swing.JOptionPane;
+
+import br.com.projeto.beans.Cargo;
+import br.com.projeto.bo.CargoBO;
+import br.com.projeto.util.Magic;
+
+public class TesteCargoBO {
+
+	public static void main(String[] args) {
+		try {
+		char resp = Magic.s("Digite:\n<1> Cadastrar\n<2> Consultar\n<3> Excluir").charAt(0);
+		if (resp == '1') {
+			JOptionPane.showMessageDialog(null, CargoBO.novo(new Cargo(
+						Magic.s("Nome"),
+						Magic.s("Nível"),
+						Magic.d("Salario"),
+						Magic.i("ID")
+					)));
+		}else if (resp == '2') {
+			
+		} else if (resp == '3') {
+			
+		}else {
+			JOptionPane.showMessageDialog(null, "Opção inválida");
+		}
+		} catch (Exception e) {
+			
+		}
+
+	}
+
+}

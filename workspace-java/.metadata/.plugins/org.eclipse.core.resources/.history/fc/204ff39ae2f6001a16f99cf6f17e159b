@@ -1,0 +1,15 @@
+package br.com.projeto.implementacao;
+
+import br.com.projeto.util.Magic;
+
+public class TesteCargoBO {
+
+	public static void main(String[] args) {
+		char resp = Magic.s("Digite:\n<1> Cadastrar\n<2> Consultar\n<3> Excluir").charAt(0);
+		if (resp == '1') {
+			
+		}
+
+	}
+
+}

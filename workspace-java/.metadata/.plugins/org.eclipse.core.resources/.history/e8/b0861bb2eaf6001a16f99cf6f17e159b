@@ -1,0 +1,66 @@
+package br.com.projeto.bo;
+
+import br.com.projeto.beans.Cargo;
+import br.com.projeto.dao.CargoDAO;
+
+public class CargoBO {
+	/*
+	 * apagar() => Invocar o delete do CargoDAO(), validando o ID
+	 * pesquisarCargo() => Invocar o getCargo(), validando o ID
+	 * Implementar no TesteCargoBO
+	 * 
+	 * */
+	
+	public static String apagar() {
+		
+	}
+	
+	public static String novo(Cargo objeto) throws Exception{
+		
+		//Regra de Negócio
+		
+		if (objeto.getId() <1 ) {
+			return "ID invalido!";
+		}
+		
+		//Considerando que Nome e Nível não estão como obrigatórios no banco
+		if (objeto.getNome() == null || objeto.getNome().length() < 4) {
+			return "Nome do Cargo invalido";
+		}
+		
+		if (objeto.getNivel() == null || objeto.getNivel().length() < 4) {
+			return "Nível inválido!";
+		}
+		
+		if (objeto.getSalario() < 1000) {
+			return "Salário inválido!";
+		}
+		
+		//Requisito Funcional
+
+		// Supondo-se que 30 é o tamanho máximo definido no BD para Nome e Nível
+		if (objeto.getNome().length() > 30) {
+			return "Nome do cargo muito grande!";
+		}
+		
+		if (objeto.getNivel().length() > 30) {
+			return "Nível com muitos caracteres";
+		}
+		
+		//Padronização
+		
+		objeto.setNome(objeto.getNome().toUpperCase());
+		objeto.setNivel(objeto.getNivel().toUpperCase());
+		
+		CargoDAO dao = new CargoDAO();
+		Cargo resposta = dao.getCargo(objeto.getId());
+		if (resposta.getId() != 0) {
+			dao.fechar();
+			return "Este ID já existe!";
+		}
+		
+		dao.add(objeto);
+		dao.fechar();
+		return "Congrats !!!";
+	}
+}

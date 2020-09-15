@@ -1,0 +1,28 @@
+package br.com.projeto.beans;
+
+public class Produto {
+	
+	/*
+	 * Monta a tabela no BD
+	 * Monta o Beans (construtores/getters e setters)
+	 * Montar o DAO:
+	 * 		método para cadastrar, consultar pela descrição, apagar pelo ID e alterar valorCompra e valorVenda
+	 * Montar o BO:
+	 * 		método para cadastrar, consultar e alterar o DAO
+	 * TesteProdutoBO
+	 * 
+	 * */
+	
+	private int id;
+	private float valorCompra;
+	private float valorVenda;
+	private int qtde;
+	private String descricao;
+	
+	public Produto() {
+		super();
+	}
+	
+	public Produto(int id, float valorCompra, float valorVenda, int qtde, String descricao)
+
+}

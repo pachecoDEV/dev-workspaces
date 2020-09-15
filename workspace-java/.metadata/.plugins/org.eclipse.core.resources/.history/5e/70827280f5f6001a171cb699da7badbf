@@ -1,0 +1,20 @@
+package br.com.projeto.implementacao;
+
+import br.com.projeto.beans.Produto;
+import br.com.projeto.dao.ProdutoDAO;
+
+public class TesteCadastrarProduto {
+
+	public static void main(String[] args) {
+		try {
+			ProdutoDAO dao = new ProdutoDAO();
+			Produto produto = new Produto();
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
+	}
+
+}
