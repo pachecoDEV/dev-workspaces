@@ -20,8 +20,6 @@ while opcao != 5:
     if numIdentificacao == 0:
         print("Programa Interrompido!\n\t")
 
-        print("Quantidade total de mouse(s): " + str(totalAtivos) + "\n\t")
-
         print("---- Identificação dos mouses sem defeito ----")
         if totDef5 == 0:
             print("Nenhum")
@@ -71,6 +69,11 @@ while opcao != 5:
                 if (valor == 4):
                     print(chave)
             print("Total: " + str(totDef4) + " mouse(s)." + "\n\t")
+
+        print("Quantidade total de mouse(s): " + str(totalAtivos) + "\n\t")
+        print("% de mouses sem defeito: " + str(pctDef5) + "%\n\t")
+        print("% de mouses com apenas um defeito: ")
+
         break
 
     print('\nMenu de defeitos')

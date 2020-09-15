@@ -1,3 +1,4 @@
+
 package br.com.projeto.implementacao;
 
 import javax.swing.JOptionPane;
@@ -14,12 +15,12 @@ public class TesteAddCargo {
 			CargoDAO dao = new CargoDAO(); 
 			Cargo cargo = new Cargo();
 			cargo.setId(Integer.parseInt(JOptionPane.showInputDialog("ID")));
-			cargo.setNivel(JOptionPane.showInputDialog("Nível").toUpperCase());
+			cargo.setNivel(JOptionPane.showInputDialog("Nivel").toUpperCase());
 			cargo.setNome(JOptionPane.showInputDialog("Nome").toUpperCase());
-			cargo.setSalario(Double.parseDouble(JOptionPane.showInputDialog("Salário")));
+			cargo.setSalario(Double.parseDouble(JOptionPane.showInputDialog("Salario")));
 		
 			if (dao.add(cargo)==0) {
-				System.out.println("Não gravou");
+				System.out.println("Nao gravou");
 			} else {
 				System.out.println("Gravado");
 			}
