@@ -1,0 +1,23 @@
+package br.com.projeto.beans;
+
+import java.io.Serializable;
+
+public class ProcessoSeletivo extends DadosVaga implements Serializable {
+    
+	private static final long serialVersionUID = 1L;
+	private String provaPratica;
+	
+
+    public ProcessoSeletivo(String provaPratica) {
+		super();
+		this.provaPratica = provaPratica;
+	}
+
+	public String getProvaPratica() {
+        return provaPratica;
+    }
+
+    public void setProvaPratica(String provaPratica) {
+        this.provaPratica = provaPratica;
+    }
+}

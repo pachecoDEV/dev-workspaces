@@ -1,0 +1,18 @@
+package br.com.projeto.implementacao;
+
+import br.com.projeto.beans.Usuario;
+
+public class TesteUsuario {
+
+	public static void main(String[] args) {
+
+		Usuario objeto = new Usuario();
+		objeto.setNome("Alexandre");
+		objeto.setEmail("pachecodocouto@gmail.com");
+		objeto.setEndereco("Rua José Wasth Rodrigues, 25");
+		objeto.setTelefone("11950413721");
+		
+
+	}
+
+}

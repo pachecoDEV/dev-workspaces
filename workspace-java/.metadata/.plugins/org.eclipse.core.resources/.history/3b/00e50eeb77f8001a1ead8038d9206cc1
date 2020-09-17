@@ -1,0 +1,20 @@
+package br.com.projeto.beans;
+
+public class Cidade {
+	private int id;
+	private String cidade;
+	private String estado;
+	private String pais;
+	public Cidade() {
+		super();
+	}
+	public Cidade(int id, String cidade, String estado, String pais) {
+		super();
+		this.id = id;
+		this.cidade = cidade;
+		this.estado = estado;
+		this.pais = pais;
+	}
+	
+
+}

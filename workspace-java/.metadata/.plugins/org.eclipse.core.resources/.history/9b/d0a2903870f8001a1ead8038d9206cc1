@@ -1,0 +1,15 @@
+package br.com.projeto.beans;
+
+import java.io.Serializable;
+
+public class processoSeletivo extends DadosVaga implements Serializable {
+    private String provaPratica;
+
+    public String getProvaPratica() {
+        return provaPratica;
+    }
+
+    public void setProvaPratica(String provaPratica) {
+        this.provaPratica = provaPratica;
+    }
+}

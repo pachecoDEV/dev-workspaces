@@ -1,0 +1,14 @@
+package br.com.projeto.implementacao;
+
+import br.com.projeto.beans.Usuario;
+
+public class TesteUsuario {
+
+	public static void main(String[] args) {
+
+		Usuario objeto = new Usuario();
+		
+
+	}
+
+}

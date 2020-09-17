@@ -1,0 +1,22 @@
+package br.com.projeto.beans;
+
+import java.io.Serializable;
+
+public class NambiquaraRh implements Serializable {
+    
+	private static final long serialVersionUID = 1L;
+	private String duvidaCandidato;
+    private String vaga;
+    private String status;
+	public NambiquaraRh(String duvidaCandidato, String vaga, String status) {
+		super();
+		this.duvidaCandidato = duvidaCandidato;
+		this.vaga = vaga;
+		this.status = status;
+	}
+	public NambiquaraRh() {
+		super();
+	}
+    
+}
+    

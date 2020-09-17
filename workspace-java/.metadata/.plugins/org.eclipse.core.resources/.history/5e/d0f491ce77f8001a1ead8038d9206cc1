@@ -1,0 +1,8 @@
+package br.com.projeto.beans;
+
+public class Cidade {
+	private int id;
+	private String Cidade;
+	private String 
+
+}

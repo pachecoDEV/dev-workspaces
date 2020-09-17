@@ -2,24 +2,24 @@ package br.com.projeto.implementacao;
 
 import javax.swing.JOptionPane;
 
-import br.com.projeto.crud.CRUDProcesso;
+import br.com.projeto.beans.StatusProcesso;
+import br.com.projeto.crud.CrudProcesso;
 import br.com.projeto.exception.Excecao;
-import br.com.projeto.nambiquara.statusProcesso;
 
 public class TesteAddProcesso {
 
 	public static void main(String[] args) {
 		
 		try {
-			CRUDProcesso crudProcesso = new CRUDProcesso(); 
-			statusProcesso processo = new statusProcesso();
-			processo.setStatusDocumentacao(JOptionPane.showInputDialog("Documentação"));
-			processo.setStatusProvaPratica(JOptionPane.showInputDialog("Prova Prática"));
-			processo.setStatusContratacao(JOptionPane.showInputDialog("Contratação"));
+			CrudProcesso crudProcesso = new CrudProcesso(); 
+			StatusProcesso processo = new StatusProcesso();
+			processo.setStatusDocumentacao(JOptionPane.showInputDialog("Documentaï¿½ï¿½o"));
+			processo.setStatusProvaPratica(JOptionPane.showInputDialog("Prova Prï¿½tica"));
+			processo.setStatusContratacao(JOptionPane.showInputDialog("Contrataï¿½ï¿½o"));
 			processo.setId(JOptionPane.showInputDialog("ID"));
 		
 			if (crudProcesso.add(processo)==0) {
-				System.out.println("Não gravou");
+				System.out.println("Nï¿½o gravou");
 			} else {
 				System.out.println("Gravado");
 			}

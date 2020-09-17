@@ -1,0 +1,13 @@
+package br.com.projeto.beans;
+
+public class Cidade {
+	private int id;
+	private String cidade;
+	private String estado;
+	private String pais;
+	public Cidade() {
+		super();
+	}
+	
+
+}

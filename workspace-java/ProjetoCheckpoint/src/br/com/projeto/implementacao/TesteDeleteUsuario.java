@@ -2,16 +2,16 @@ package br.com.projeto.implementacao;
 
 import javax.swing.JOptionPane;
 
-import br.com.projeto.crud.CRUDUsuario;
+import br.com.projeto.crud.CrudUsuario;
 import br.com.projeto.exception.Excecao;
 
 public class TesteDeleteUsuario {
 
 	public static void main(String[] args) {
 		try {
-			CRUDUsuario usuario = new CRUDUsuario();
+			CrudUsuario usuario = new CrudUsuario();
 			
-			System.out.println("Você apagou " +
+			System.out.println("Vocï¿½ apagou " +
 					usuario.delete(Integer.parseInt(JOptionPane.showInputDialog("CPF"))) +
 					" registro(s)");
 			

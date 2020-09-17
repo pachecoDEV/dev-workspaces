@@ -2,16 +2,16 @@ package br.com.projeto.implementacao;
 
 import javax.swing.JOptionPane;
 
-import br.com.projeto.crud.CRUDVagas;
+import br.com.projeto.crud.CrudVagas;
 import br.com.projeto.exception.Excecao;
 
 public class TesteDeleteVaga {
 
 	public static void main(String[] args) {
 		try {
-			CRUDVagas vaga = new CRUDVagas();
+			CrudVagas vaga = new CrudVagas();
 			
-			System.out.println("Você apagou " +
+			System.out.println("Vocï¿½ apagou " +
 					vaga.delete(Integer.parseInt(JOptionPane.showInputDialog("ID"))) +
 					" registro(s)");
 			

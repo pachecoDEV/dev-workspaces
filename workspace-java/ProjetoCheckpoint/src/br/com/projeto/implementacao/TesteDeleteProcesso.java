@@ -2,16 +2,16 @@ package br.com.projeto.implementacao;
 
 import javax.swing.JOptionPane;
 
-import br.com.projeto.crud.CRUDProcesso;
+import br.com.projeto.crud.CrudProcesso;
 import br.com.projeto.exception.Excecao;
 
 public class TesteDeleteProcesso {
 
 	public static void main(String[] args) {
 		try {
-			CRUDProcesso processo = new CRUDProcesso();
+			CrudProcesso processo = new CrudProcesso();
 			
-			System.out.println("Você apagou " +
+			System.out.println("Vocï¿½ apagou " +
 					processo.delete(Integer.parseInt(JOptionPane.showInputDialog("ID"))) +
 					" registro(s)");
 			

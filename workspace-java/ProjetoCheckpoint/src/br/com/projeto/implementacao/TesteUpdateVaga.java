@@ -4,13 +4,13 @@ import br.com.projeto.exception.Excecao;
 
 import javax.swing.JOptionPane;
 
-import br.com.projeto.crud.CRUDVagas;
+import br.com.projeto.crud.CrudVagas;
 
 public class TesteUpdateVaga {
 
 	public static void main(String[] args) {
 		try {
-			CRUDVagas vaga = new CRUDVagas();
+			CrudVagas vaga = new CrudVagas();
 
 			System.out.println(vaga.update(
 					JOptionPane.showInputDialog("Digite o ID")) +

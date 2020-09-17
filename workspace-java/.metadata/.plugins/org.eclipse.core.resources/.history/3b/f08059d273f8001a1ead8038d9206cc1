@@ -1,0 +1,29 @@
+package br.com.projeto.beans;
+
+import java.io.Serializable;
+
+public class Documento extends NambiquaraRh implements Serializable {
+    
+	private static final long serialVersionUID = 1L;
+	private String doc;
+	
+	
+
+    public Documento() {
+		super();
+	}
+
+	public Documento(String doc) {
+		super();
+		this.doc = doc;
+	}
+
+	public String getDoc() {
+        return doc;
+    }
+
+    public void setDoc(String doc) {
+        this.doc = doc;
+    }
+
+}
