@@ -10,8 +10,7 @@ public class TesteGetPessoa {
 	public static void main(String[] args) {
 		try {
 			PessoaDAO dao = new PessoaDAO();
-			Pessoa resposta = 
-					dao.getPessoa(Magic.s("CPF"));
+			Pessoa resposta = dao.getPessoa(Magic.s("CPF"));
 			System.out.println(resposta.getCpf());
 			System.out.println(resposta.getCnpj());
 			System.out.println(resposta.getNome());

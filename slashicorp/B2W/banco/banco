@@ -1,2 +1,172 @@
-Dentro da pasta banco, um arquivo chamado banco.txt, que deverá conter 
-em ordem correta e lógica, os comandos DDL e DML para criação do banco e população das tabelas.
+-- Gerado por Oracle SQL Developer Data Modeler 19.4.0.350.1424
+--   em:        2020-09-20 15:37:11 BRT
+--   site:      Oracle Database 11g
+--   tipo:      Oracle Database 11g
+
+DROP TABLE tb_analistarh CASCADE CONSTRAINTS;
+
+DROP TABLE tb_candidato CASCADE CONSTRAINTS;
+
+DROP TABLE tb_cargo CASCADE CONSTRAINTS;
+
+DROP TABLE tb_contrato CASCADE CONSTRAINTS;
+
+DROP TABLE tb_documento CASCADE CONSTRAINTS;
+
+DROP TABLE tb_log CASCADE CONSTRAINTS;
+
+DROP TABLE tb_login CASCADE CONSTRAINTS;
+
+DROP TABLE tb_pessoa CASCADE CONSTRAINTS;
+
+-- Gerado por Oracle SQL Developer Data Modeler 19.4.0.350.1424
+--   em:        2020-09-20 15:37:11 BRT
+--   site:      Oracle Database 11g
+--   tipo:      Oracle Database 11g
+
+
+CREATE TABLE tb_analistarh (
+    id_analistarh  NUMBER(5) NOT NULL,
+    cpf            VARCHAR2(11) NOT NULL
+);
+
+ALTER TABLE tb_analistarh ADD CONSTRAINT tb_analistarh_pk PRIMARY KEY ( id_analistarh );
+
+CREATE TABLE tb_candidato (
+    id_candidato  NUMBER(5) NOT NULL,
+    cpf           VARCHAR2(11) NOT NULL
+);
+
+ALTER TABLE tb_candidato ADD CONSTRAINT tb_candidato_pk PRIMARY KEY ( id_candidato );
+
+CREATE TABLE tb_cargo (
+    cpf         VARCHAR2(11) NOT NULL,
+    id_cargo    NUMBER(5) NOT NULL,
+    tipo_cargo  VARCHAR2(50) NOT NULL,
+    dt_inicio   DATE NOT NULL,
+    dt_fim      DATE
+);
+
+ALTER TABLE tb_cargo ADD CONSTRAINT tb_cargo_pk PRIMARY KEY ( id_cargo );
+
+CREATE TABLE tb_contrato (
+    cpf            VARCHAR2(11) NOT NULL,
+    id_contrato    NUMBER(5) NOT NULL,
+    tipo_contrato  VARCHAR2(50) NOT NULL,
+    dt_inicio      DATE NOT NULL,
+    dt_fim         DATE NOT NULL
+);
+
+ALTER TABLE tb_contrato ADD CONSTRAINT tb_contrato_pk PRIMARY KEY ( id_contrato );
+
+CREATE TABLE tb_documento (
+    id_contrato     NUMBER(5) NOT NULL,
+    id_documento    NUMBER(5) NOT NULL,
+    tipo_doc        VARCHAR2(50) NOT NULL,
+    validez_doc     VARCHAR2(20) NOT NULL,
+    validade_doc    DATE NOT NULL,
+    dt_envio        DATE NOT NULL,
+    dt_confirmacao  DATE NOT NULL,
+    status_doc      VARCHAR2(20) NOT NULL
+);
+
+ALTER TABLE tb_documento ADD CONSTRAINT tb_documento_pk PRIMARY KEY ( id_documento );
+
+CREATE TABLE tb_log (
+    id_documento  NUMBER(5) NOT NULL,
+    id_log        NUMBER(5) NOT NULL,
+    desc_log      VARCHAR2(50) NOT NULL,
+    data_log      DATE NOT NULL
+);
+
+ALTER TABLE tb_log ADD CONSTRAINT tb_log_pk PRIMARY KEY ( id_log );
+
+CREATE TABLE tb_login (
+    cpf      VARCHAR2(11) NOT NULL,
+    usuario  VARCHAR2(20) NOT NULL,
+    senha    VARCHAR2(20) NOT NULL
+);
+
+ALTER TABLE tb_login ADD CONSTRAINT tb_login_pk PRIMARY KEY ( usuario );
+
+CREATE TABLE tb_pessoa (
+    cpf        VARCHAR2(11) NOT NULL,
+    cnpj       VARCHAR2(14),
+    nm_pessoa  VARCHAR2(30) NOT NULL,
+    telefone   VARCHAR2(11) NOT NULL
+);
+
+ALTER TABLE tb_pessoa ADD CONSTRAINT tb_pessoa_pk PRIMARY KEY ( cpf );
+
+ALTER TABLE tb_documento
+    ADD CONSTRAINT rel_contrato_doc FOREIGN KEY ( id_contrato )
+        REFERENCES tb_contrato ( id_contrato );
+
+ALTER TABLE tb_log
+    ADD CONSTRAINT rel_doc_log FOREIGN KEY ( id_documento )
+        REFERENCES tb_documento ( id_documento );
+
+ALTER TABLE tb_analistarh
+    ADD CONSTRAINT rel_pessoa_analistarh FOREIGN KEY ( cpf )
+        REFERENCES tb_pessoa ( cpf );
+
+ALTER TABLE tb_candidato
+    ADD CONSTRAINT rel_pessoa_candidato FOREIGN KEY ( cpf )
+        REFERENCES tb_pessoa ( cpf );
+
+ALTER TABLE tb_cargo
+    ADD CONSTRAINT rel_pessoa_cargo FOREIGN KEY ( cpf )
+        REFERENCES tb_pessoa ( cpf );
+
+ALTER TABLE tb_contrato
+    ADD CONSTRAINT rel_pessoa_contrato FOREIGN KEY ( cpf )
+        REFERENCES tb_pessoa ( cpf );
+
+ALTER TABLE tb_login
+    ADD CONSTRAINT rel_pessoa_login FOREIGN KEY ( cpf )
+        REFERENCES tb_pessoa ( cpf );
+
+
+
+-- RelatÃ³rio do Resumo do Oracle SQL Developer Data Modeler: 
+-- 
+-- CREATE TABLE                             8
+-- CREATE INDEX                             0
+-- ALTER TABLE                             15
+-- CREATE VIEW                              0
+-- ALTER VIEW                               0
+-- CREATE PACKAGE                           0
+-- CREATE PACKAGE BODY                      0
+-- CREATE PROCEDURE                         0
+-- CREATE FUNCTION                          0
+-- CREATE TRIGGER                           0
+-- ALTER TRIGGER                            0
+-- CREATE COLLECTION TYPE                   0
+-- CREATE STRUCTURED TYPE                   0
+-- CREATE STRUCTURED TYPE BODY              0
+-- CREATE CLUSTER                           0
+-- CREATE CONTEXT                           0
+-- CREATE DATABASE                          0
+-- CREATE DIMENSION                         0
+-- CREATE DIRECTORY                         0
+-- CREATE DISK GROUP                        0
+-- CREATE ROLE                              0
+-- CREATE ROLLBACK SEGMENT                  0
+-- CREATE SEQUENCE                          0
+-- CREATE MATERIALIZED VIEW                 0
+-- CREATE MATERIALIZED VIEW LOG             0
+-- CREATE SYNONYM                           0
+-- CREATE TABLESPACE                        0
+-- CREATE USER                              0
+-- 
+-- DROP TABLESPACE                          0
+-- DROP DATABASE                            0
+-- 
+-- REDACTION POLICY                         0
+-- 
+-- ORDS DROP SCHEMA                         0
+-- ORDS ENABLE SCHEMA                       0
+-- ORDS ENABLE OBJECT                       0
+-- 
+-- ERRORS                                   0
+-- WARNINGS                                 0
