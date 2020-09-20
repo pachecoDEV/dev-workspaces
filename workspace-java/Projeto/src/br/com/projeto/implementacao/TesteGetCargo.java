@@ -1,8 +1,5 @@
 package br.com.projeto.implementacao;
 
-import javax.crypto.MacSpi;
-import javax.swing.JOptionPane;
-
 import br.com.projeto.beans.Cargo;
 import br.com.projeto.dao.CargoDAO;
 import br.com.projeto.exception.Excecao;

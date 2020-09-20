@@ -8,7 +8,6 @@
 <fullyQualifiedTypeName name="java.beans.Statement"/>
 <fullyQualifiedTypeName name="java.sql.DriverManager"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="br.com.fiapon.banco.Conta"/>
 <fullyQualifiedTypeName name="br.com.projeto.beans.Colaborador"/>
 <fullyQualifiedTypeName name="br.com.projeto.beans.Pessoa"/>
@@ -33,4 +32,7 @@
 <fullyQualifiedTypeName name="br.com.projeto.exception.Excecao"/>
 <fullyQualifiedTypeName name="br.com.projeto.util.Magic"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="br.com.udemy.classe.Produto"/>
+<fullyQualifiedTypeName name="br.com.udemy.classe.AreaCirc"/>
 </qualifiedTypeNameHistroy>

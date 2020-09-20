@@ -43,7 +43,7 @@ public class CargoBO {
 		}
 		
 		if (objeto.getSalario() < 1000) {
-			return "Salário inválido!";
+			return "Salário invalido!";
 		}
 		
 		//Requisito Funcional
