@@ -23,43 +23,47 @@ public class PessoaDAO {
 	public int add (Pessoa objeto) throws Exception {
 		stmt = con.prepareStatement
 				("INSERT INTO TB_PESSOA"
-						+ "(CPF, CNPJ, NM_PESSOA, TELEFONE)"
-						+ "VALUES (?, ?, ?, ?)");
-		stmt.setString(1, objeto.getCpf());
-		stmt.setString(2, objeto.getCnpj());
-		stmt.setString(3, objeto.getNome());
-		stmt.setString(4, objeto.getTelefone());
+						+ "(ID_PESSOA, CPF, CNPJ, NM_PESSOA, TELEFONE, TIPO_USUARIO)"
+						+ "VALUES (?, ?, ?, ?, ?, ?)");
+		stmt.setInt(1, objeto.getIdPessoa());
+		stmt.setString(2, objeto.getCpf());
+		stmt.setString(3, objeto.getCnpj());
+		stmt.setString(4, objeto.getNome());
+		stmt.setString(5, objeto.getTelefone());
+		stmt.setString(6, objeto.getTipoUsuario());
 		
 		return stmt.executeUpdate();
 	}
 	
-	public int delete(String cpf) throws Exception {
+	public int delete(int idPessoa) throws Exception {
 		stmt = con.prepareStatement
-				("DELETE FROM TB_PESSOA WHERE CPF = ?");
-		stmt.setString(1, cpf);
+				("DELETE FROM TB_PESSOA WHERE ID_PESSOA = ?");
+		stmt.setInt(1, idPessoa);
 		
 		return stmt.executeUpdate();
 	}
 	
-	public int update(String telefone, String cpf) throws Exception {
+	public int update(String telefone, int idPessoa) throws Exception {
 		stmt = con.prepareStatement
-				("UPDATE TB_PESSOA SET TELEFONE=? WHERE CPF=?");
+				("UPDATE TB_PESSOA SET TELEFONE=? WHERE ID_PESSOA=?");
 		stmt.setString(1, telefone);
-		stmt.setString(2, cpf);
+		stmt.setInt(2, idPessoa);
 		return stmt.executeUpdate();
 	}
 	
-	public Pessoa getPessoa(String cpf) throws Exception{
+	public Pessoa getPessoa(int idPessoa) throws Exception{
 		stmt = con.prepareStatement
-				("SELECT * FROM TB_PESSOA WHERE CPF=?");
-		stmt.setString(1, cpf);
+				("SELECT * FROM TB_PESSOA WHERE ID_PESSOA=?");
+		stmt.setInt(1, idPessoa);
 		rs = stmt.executeQuery();
 		if (rs.next()) {
 			return new Pessoa(
+					rs.getInt("ID_PESSOA"),
 					rs.getString("CPF"),
 					rs.getString("CNPJ"),
 					rs.getString("NM_PESSOA"),
-					rs.getString("TELEFONE"));
+					rs.getString("TELEFONE"),
+					rs.getString("TIPO_USUARIO"));
 		}
 		
 		return new Pessoa();

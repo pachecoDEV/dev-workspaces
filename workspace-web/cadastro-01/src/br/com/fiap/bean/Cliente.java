@@ -17,6 +17,15 @@ public class Cliente implements Serializable{
 	public Cliente() {
 		
 	}
+	
+	public Cliente(String nome, String sobrenome, Date dataNasc, char genero, String telefone) {
+		super();
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.dataNasc = dataNasc;
+		this.genero = genero;
+		this.telefone = telefone;
+	}
 
 	public String getNome() {
 		return nome;

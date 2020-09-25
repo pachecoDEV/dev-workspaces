@@ -1,19 +1,29 @@
 package br.com.rh.projeto.beans;
 
 public class Pessoa {
+	private int idPessoa;
 	private String cpf;
 	private String cnpj;
 	private String nome;
 	private String telefone;
+	private String tipoUsuario;
 	public Pessoa() {
 		super();
 	}
-	public Pessoa(String cpf, String cnpj, String nome, String telefone) {
+	public Pessoa(int idPessoa, String cpf, String cnpj, String nome, String telefone, String tipoUsuario) {
 		super();
+		this.idPessoa = idPessoa;
 		this.cpf = cpf;
 		this.cnpj = cnpj;
 		this.nome = nome;
 		this.telefone = telefone;
+		this.tipoUsuario = tipoUsuario;
+	}
+	public int getIdPessoa() {
+		return idPessoa;
+	}
+	public void setIdPessoa(int idPessoa) {
+		this.idPessoa = idPessoa;
 	}
 	public String getCpf() {
 		return cpf;
@@ -38,6 +48,12 @@ public class Pessoa {
 	}
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
+	}
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 	
 

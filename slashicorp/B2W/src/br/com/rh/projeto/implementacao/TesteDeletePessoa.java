@@ -10,7 +10,7 @@ public class TesteDeletePessoa {
 		try {
 			PessoaDAO dao = new PessoaDAO();
 			System.out.println("Voce apagou: " + 
-					dao.delete(JOptionPane.showInputDialog("CPF")) + 
+					dao.delete(Integer.parseInt(JOptionPane.showInputDialog("ID"))) + 
 					" pessoa(s)!");
 			dao.fechar();
 			

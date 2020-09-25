@@ -4,5 +4,6 @@
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$/DesafioPython/gh3corp-team" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/checkpoint/ctp_checkpoint_01" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/juan/checkpoint-2-python" vcs="Git" />
   </component>
 </project>
